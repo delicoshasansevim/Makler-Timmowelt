@@ -1,0 +1,1482 @@
+﻿@model IEnumerable<timmoweltNew3.Models.Haeuser>
+@using timmoweltNew3.Models;
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+ 
+
+<!--4.row-->
+<figure id="figure1" style="">
+
+</figure>
+
+
+<!--3.row-->
+<div id="anzeige-div" style="position:relative; z-index:0; padding:20px 200px; margin-top:-110px; width:100%; height:100px; background-color:#fff">
+   
+    <div id="x1" style="width:900px; height:100px; position:relative; margin:-10px auto; ">
+        <p style="font-size:1.2em; position:relative; ">
+            Jetzt noch mehr Reichweite: Inserieren Sie auf Timmowelt.de bereits ab <span style="font-size:1.4em"> 19,90 € </span> inkl. MwSt. <span style="font-weight:bold"> <input id="Anzeige-aufgeben" type="submit" value="Anzeige-aufgeben" class="btn btn-default" /> </span>
+        </p>
+
+        <p>
+            <a href="#"><i class="fa fa-angle-right" style="color:orangered"></i> <span style=" color:#000; font-size:1.2em; text-decoration:none;" ng-model="x" ng-mouseover="x=true" ng-mouseleave="x=false" ng-style="x===true ? { 'color': 'green' } : {'color':'black'}"> Preisübersicht</span> </a>
+        </p>
+    </div>
+
+</div>  
+
+
+<div id="anzeige-div-tablet"  style="position:relative; z-index:999999; display:none; padding:-20px 200px; margin-top:150px; width:100%; height:100px; background-color:#fff">
+
+    <div style="width:900px; height:100px; position:relative; margin:-220px auto; ">
+        <p style="font-size:1.2em; position:relative; ">
+            Jetzt noch mehr Reichweite: Inserieren Sie auf Timmowelt.de bereits ab <span style="font-size:1.4em"> 19,90 € </span> inkl. MwSt. <span style="font-weight:bold"> <input type="submit" value="Anzeige aufgeben" class="btn btn-default" /> </span>
+        </p>
+
+        <p>
+            <a href="#"><i class="fa fa-angle-right" style="color:orangered"></i> <span style=" color:#000; font-size:1.2em; text-decoration:none;" ng-model="x" ng-mouseover="x=true" ng-mouseleave="x=false" ng-style="x===true ? { 'color': 'green' } : {'color':'black'}"> Preisübersicht</span> </a>
+        </p>
+    </div>
+
+</div> 
+
+
+<div id="anzeige-div-smart" style="position:relative; z-index:999999; display:none; padding:-20px 200px; margin-top:150px; width:100%; height:150px; background-color:#fff">
+
+    <div style="width:1100px; height:100px; position:relative; margin:-240px 20px; ">
+        <p style="font-size:1.1em; position:relative; width:68%; height:100px;">
+            Jetzt noch mehr Reichweite: Inserieren Sie auf Timmowelt.de bereits ab <span style="font-size:1.4em"> 19,90 € </span> inkl. MwSt. <span style="font-weight:bold"> <input type="submit" value="Anzeige aufgeben" class="btn btn-default" /> </span>
+        </p>
+
+        <p style="margin-top:-30px;">
+            <a href="#"><i class="fa fa-angle-right" style="color:orangered"></i> <span style=" color:#000; font-size:1.2em; text-decoration:none;" ng-model="x" ng-mouseover="x=true" ng-mouseleave="x=false" ng-style="x===true ? { 'color': 'blue' } : {'color':'black'}"> Preisübersicht</span> </a>
+        </p>
+    </div>
+
+</div> 
+
+
+
+
+<div id="anzeige-div-smart480" style="position:relative; z-index:999999; display:none; padding:-20px 200px; margin-top:150px; width:100%; height:150px; background-color:#fff">
+
+    <div style="width:70%; height:100px; position:relative; margin:-220px auto; ">
+        <p style="font-size:1.2em; position:relative; width:70%; height:100px;">
+            Jetzt noch mehr Reichweite: Inserieren Sie auf Timmowelt.de bereits ab <span style="font-size:1.4em"> 19,90 € </span> inkl. MwSt. <span style="font-weight:bold"> <input type="submit" value="Anzeige aufgeben" class="btn btn-default" /> </span>
+        </p>
+
+        <p>
+            <a href="#"><i class="fa fa-angle-right" style="color:orangered"></i> <span style=" color:#000; font-size:1.2em; text-decoration:none;" ng-model="x" ng-mouseover="x=true" ng-mouseleave="x=false" ng-style="x===true ? { 'color': 'green' } : {'color':'black'}"> Preisübersicht</span> </a>
+        </p>
+    </div>
+
+</div> 
+
+
+
+@*<div class="container">*@
+
+    <section id="section3" ng-controller="personCtrl" style="position:relative;   box-shadow:5px 5px 6px gray; overflow-y:scroll; overflow-x:hidden; z-index:9; width:auto; height:315px; background-color:#f5f6f4;">
+
+        <fieldset>
+             
+                @if (Model != null)
+                {
+
+                <table  id="table1" cellspacing="10" class="table table-striped table-bordered table-hover table-inverse">
+                    <thead class="thead-inverse" >
+                        <tr class="warning">
+                            <th style="border-right:1px inset gray; ">
+                            Stadt 
+                            </th>
+                            <th>Preis</th>
+                            <th>Miete / Kauf</th>
+                            <th>Wohnung Größe</th>
+                            <th>Zimmer</th>
+                            <th>Bilder
+                                 
+                            <md-button id="btn-close"  class="md-Themed md-primary" style="position:absolute; top:-5px; right:2px"><i class="fa fa-close"> Close</i></md-button>
+                               
+                            </th>
+                        </tr>
+                    </thead>
+                    @foreach (var item in Model)
+                    {
+
+                        <tbody>
+                            <tr class="danger">
+                                <th id="ort-view" style="background-color:#f5f6f4">@item.Ort</th>
+                                
+                                <td class="warning">@item.Mietpreis</td>
+                                <td>@item.Wohnungmieten</td>  
+                                <td>@item.Wohnflaeche</td>
+                                <td>@item.Zimmer</td>
+                                <td><a href="@Url.Content(item.Bilder)"><img id="td-image" src="@Url.Content(item.Bilder)" width="100" height="50" /></a></td>
+
+                            </tr>
+                        </tbody>
+                    }
+                </table>
+
+                }
+
+
+            <style type="text/css">
+                table > tr  {
+                  border: 1px solid black;
+                  width: 100%;
+
+                  /*background-color: orangered;*/
+              }
+
+                    table > thead > tr > th {
+                    
+                        height:50px;
+                    }
+
+                    table > tr > td {
+                        background-color: orangered;
+                    }
+
+              #ort-view:first-letter {
+
+              text-transform:uppercase;
+          }
+
+
+
+                
+              #td-image:hover {
+              
+                  transform:scale(2.5);
+              }
+
+            </style>
+
+
+
+            
+            <div style="position:relative; width:100%; height:20px; margin:10px 30%">
+                <h1> @ViewBag.ErrorModel </h1 >
+            </div>
+
+            <div style="position:relative; width:100%; height:20px; margin:-20px 30%">
+                <h1> @ViewBag.ErrorModel1</h1> 
+                <h2 style="color:green">@ViewBag.ErrorModel1a</h2>
+            </div>
+
+            <div style="position:relative; width:100%; height:20px; margin:10px 30%">
+                <h1> @ViewBag.ErrorModel12</h1>
+            </div>
+
+           
+         
+        </fieldset>
+
+
+
+        @if ( (@ViewBag.ErrorModel != "No data found, please enter data")  && @ViewBag.ErrorModel1 != "We found no suitable data" && @ViewBag.ErrorModel1a != "Sorry, we have only three rooms option.")
+        {
+            <div id="pDiv" style="margin:-50px 340px">
+                <h2>
+                    Gefunden werden, statt selber suchen <br /> Mit Ihrer persönlichen Suchanzeige zur Wunschimmobilie
+                </h2>
+
+                <p><i class="fa fa-check" aria-hidden="true" style="color:green; transform:scale(1.3)"></i> beschreiben Sie sich und Ihre Wünsche </p>
+                <p><i class="fa fa-check" aria-hidden="true" style="color:green; transform:scale(1.3)"></i> erhalten Sie Angebote direkt von Vermietern und Verkäufern </p>
+                <p><i class="fa fa-check" aria-hidden="true" style="color:green; transform:scale(1.3)"></i> sofort online, Laufzeit 1 Monat </p>
+                <p><i class="fa fa-check" aria-hidden="true" style="color:green; transform:scale(1.3)"></i> bezahlen Sie bequem und sicher </p>
+                <p style="margin-top:120px;"></p>
+            </div>
+
+
+
+            <div id="pDiv2" style="margin:-50px 100px; width:900px; display:none;">
+                <h3>
+                    Gefunden werden, statt selber suchen <br /> Mit Ihrer persönlichen Suchanzeige zur Wunschimmobilie
+                </h3>
+
+                <p><i class="fa fa-check" aria-hidden="true" style="color:green; transform:scale(1.3)"></i> beschreiben Sie sich und Ihre Wünsche </p>
+                <p><i class="fa fa-check" aria-hidden="true" style="color:green; transform:scale(1.3)"></i> erhalten Sie Angebote direkt von Vermietern und Verkäufern </p>
+                <p><i class="fa fa-check" aria-hidden="true" style="color:green; transform:scale(1.3)"></i> sofort online, Laufzeit 1 Monat </p>
+                <p><i class="fa fa-check" aria-hidden="true" style="color:green; transform:scale(1.3)"></i> bezahlen Sie bequem und sicher </p>
+                <p style="margin-top:120px;"></p>
+            </div>
+        }
+        
+
+    
+    </section>
+
+@*</div>*@
+
+
+
+
+
+
+
+
+<!--row 6-->
+@*<section id="section4" style="width:100%; height:100px; position:relative; z-index:9; opacity:0.5; top:0px; background-color:#359782;">
+
+</section>*@
+
+@*<section id="section5" style="position:relative; width:100%; height:500px; top:0px; background-color:#fff">
+
+</section>*@
+
+@*<section id="index-wrapper" ng-controller="personCtrl" style="width:100%; height:500px; background-color:white;">
+
+    <!--personCtrl-->
+    <div ng-controller="personCtrl">
+
+        <br />
+        <br />
+
+
+        <md-content style="background-color:white">
+            <table>
+                <tr>
+                    <td>
+                        <md-button ng-model="txt1" ng-mouseover="someText(); txt1=true" ng-mouseleave="txt1=false" ng-click="" class=" md-raised md-primary" style="width:120px; height:40px;">
+                            This Button
+                        </md-button>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td>
+                        <div ng-show="txt1"> <h1> Hello Sevim you are welcome </h1></div>
+                    </td>
+                </tr>
+            </table>
+
+
+        </md-content>
+
+    </div><!--end of personCtrl-->
+
+</section>*@ 
+
+
+<!--row 6-->
+<div id="imageDiv" style="margin-top:10px;" ng-controller="personCtrl">
+
+    <img src="~/Images/Wallpaper.bmp" style="width:100%; height:400px; position:relative; background-position:right; z-index:9;" />
+
+    <div id="imageText" style="position:absolute; top:0px; width:100%; height:300px;">
+        <h1 style="position:absolute; top:1000px; left:250px; z-index:9999; color:white">Das kosten Immobilien</h1>
+
+        <h5 style="position:absolute; top:1100px; z-index:9999999999; left:250px; color:white">Informieren Sie sich über die Entwicklung von Miet- und Kaufpreisen in Ihrer Region</h5>
+
+        <select style="position:absolute; top:1200px; z-index:9999999999;  left:250px; " class="form-control">
+            <option>Wohnung mieten</option>
+            <option>Wohnung kaufen</option>
+            <option>Haus mieten</option>
+            <option>Haus kaufen</option>
+        </select>
+
+        <input id="input1" type="text" class="form-control" placeholder="Wohnung kaufen" style="position:absolute; z-index:9999999999;  top:1250px; left:250px;" />
+
+        <md-button id="mdButton1" style="position:absolute; top:1192px; left:550px; z-index:99999999;" ng-click="giveAlert()" class="md-primary md-raised">Daten Senden</md-button>
+    </div>
+</div>
+
+
+<div id="section6-wrapper" style="width:100%; background-color:#ededed;">
+    <section id="section6" style="max-width:1200px;  height:300px; position:relative; margin:0px auto;z-index:99999999;">
+
+     
+            <article id="article1" style="width:310px; position:absolute; height:300px; float:left; ">
+                <h3 style="margin-left:40px; margin-top:50px; ">Kaufen</h3>
+                <br />
+
+                <ul class="link-menu">
+                    <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Haus kaufen</a></li>
+
+                    <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Wohnung kaufen</a></li>
+
+                    <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Grundstücke</a></li>
+
+                    <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Zwangsversteigerung</a></li>
+
+                    <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">weitere</a></li>
+
+                </ul>
+
+                <style type="text/css">
+                    .link-menu {
+                        /*margin-left: 90px;*/
+                    }
+
+                        .link-menu > li {
+                            list-style: none;
+                        }
+
+                            .link-menu > li > a {
+                                color: #000;
+                                font-size:1.2em;
+                            }
+
+                                .link-menu > li > a:hover {
+                                    text-decoration: none;
+                                    color: red
+                                }
+                </style>
+
+            </article>
+
+            <article id="article2" style="width:300px; height:300px; position:absolute; float:left; left:300px; ">
+                <h3 style="margin-left:40px; margin-top:50px; ">Mieten</h3>
+                <br />
+                <ul class="link-menu">
+                    <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Wohnung mieten</a></li>
+
+                    <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Haus mieten</a></li>
+
+                    <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Wohnen auf Zeit</a></li>
+
+                    <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">WGs</a></li>
+
+                    <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">weitere ...</a></li>
+
+                </ul>
+
+
+
+            </article>
+
+
+            <article id="article3" style="width:300px; height:300px; float:left; left:600px; position:absolute; ">
+                <h3 style="margin-left:40px; margin-top:50px; ">Bauen</h3>
+                <br />
+                <ul class="link-menu">
+                    <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Hausbau & Kataloge</a></li>
+
+                    <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Fertighäuser</a></li>
+
+                    <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Massivhäuser</a></li>
+
+                    <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Musterhäuser</a></li>
+
+                    <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Musterhausparks</a></li>
+
+                </ul>
+            </article>
+
+            <article id="article4" style="width:300px; height:300px; float:left; left:900px; position:absolute; ">
+                <h3 style="margin-left:40px; margin-top:50px;">Sonstiges</h3>
+
+                <br />
+                <ul class="link-menu">
+                    <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Renditeobjekte</a></li>
+
+                    <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Immobilien Projekte</a></li>
+
+                    <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Auslandsimmobilien</a></li>
+
+                    <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Seniorenwohnen</a></li>
+
+                    <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Finanzierungsrechner</a></li>
+
+                </ul>
+            </article>
+
+    </section>
+
+</div> <!--end of section3-wrapper-->
+
+<div id="section6-wrapper-tablet" style="width:100%; background-color:#f5f8f2;">
+
+    <section id="section6-tablet" style="max-width:1000px;  height:300px;  position:relative; margin:0px auto;z-index:99999999;">
+
+
+        <article id="article1-tablet" style="width:250px; position:absolute; height:300px; float:left; ">
+            <h3 style="margin-left:40px; margin-top:50px; ">Kaufen</h3>
+            <br />
+
+            <ul class="link-menu">
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Haus kaufen</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Wohnung kaufen</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Grundstücke</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Zwangsversteigerung</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">weitere</a></li>
+
+            </ul>
+
+            <style type="text/css">
+                .link-menu {
+                    /*margin-left: 90px;*/
+                }
+
+                    .link-menu > li {
+                        list-style: none;
+                    }
+
+                        .link-menu > li > a {
+                            color: #000;
+                            font-size: 1.2em;
+                        }
+
+                            .link-menu > li > a:hover {
+                                text-decoration: none;
+                                color: red
+                            }
+            </style>
+
+        </article>
+
+        <article id="article2-tablet" style="width:250px; height:300px; position:absolute; float:left; left:250px; ">
+            <h3 style="margin-left:40px; margin-top:50px; ">Mieten</h3>
+            <br />
+            <ul class="link-menu">
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Wohnung mieten</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Haus mieten</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Wohnen auf Zeit</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">WGs</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">weitere ...</a></li>
+
+            </ul>
+
+
+
+        </article>
+
+
+        <article id="article3-tablet" style="width:250px; height:300px; float:left; left:500px; position:absolute; ">
+            <h3 style="margin-left:40px; margin-top:50px; ">Bauen</h3>
+            <br />
+            <ul class="link-menu">
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Hausbau & Kataloge</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Fertighäuser</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Massivhäuser</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Musterhäuser</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Musterhausparks</a></li>
+
+            </ul>
+        </article>
+
+        <article id="article4-tablet" style="width:250px; height:300px; float:left; left:750px; position:absolute; ">
+            <h3 style="margin-left:40px; margin-top:50px;">Sonstiges</h3>
+
+            <br />
+            <ul class="link-menu">
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Renditeobjekte</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Immobilien Projekte</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Auslandsimmobilien</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Seniorenwohnen</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Finanzierungsrechner</a></li>
+
+            </ul>
+        </article>
+
+    </section>
+
+</div> <!--end of section3-wrapper-->
+
+<div id="section6-wrapper-tablet-1000px" style="width:100%; display:none; ">
+
+    <section id="section6-tablet-1000px" style="max-width:1000px;  height:300px;  position:relative; margin:0px auto;z-index:99999999;">
+
+
+        <article id="article1-tablet-1000px" style="width:220px; position:absolute; height:300px; float:left; ">
+            <h3 style="margin-left:40px; margin-top:50px; ">Kaufen</h3>
+            <br />
+
+            <ul class="link-menu">
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Haus kaufen</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Wohnung kaufen</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Grundstücke</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Zwangsversteigerung</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">weitere</a></li>
+
+            </ul>
+
+            <style type="text/css">
+                .link-menu {
+                    /*margin-left: 90px;*/
+                }
+
+                    .link-menu > li {
+                        list-style: none;
+                    }
+
+                        .link-menu > li > a {
+                            color: #000;
+                            font-size: 1.2em;
+                        }
+
+                            .link-menu > li > a:hover {
+                                text-decoration: none;
+                                color: red
+                            }
+            </style>
+
+        </article>
+
+        <article id="article2-tablet-1000px" style="width:220px; height:300px; position:absolute; float:left; left:220px; ">
+            <h3 style="margin-left:40px; margin-top:50px; ">Mieten</h3>
+            <br />
+            <ul class="link-menu">
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Wohnung mieten</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Haus mieten</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Wohnen auf Zeit</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">WGs</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">weitere ...</a></li>
+
+            </ul>
+
+
+
+        </article>
+
+
+        <article id="article3-tablet-1000px" style="width:220px; height:300px; float:left; left:440px; position:absolute; ">
+            <h3 style="margin-left:40px; margin-top:50px; ">Bauen</h3>
+            <br />
+            <ul class="link-menu">
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Hausbau & Kataloge</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Fertighäuser</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Massivhäuser</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Musterhäuser</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Musterhausparks</a></li>
+
+            </ul>
+        </article>
+
+        <article id="article4-tablet-1000px" style="width:220px; height:300px; float:left; left:660px; position:absolute; ">
+            <h3 style="margin-left:40px; margin-top:50px;">Sonstiges</h3>
+
+            <br />
+            <ul class="link-menu">
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Renditeobjekte</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Immobilien Projekte</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Auslandsimmobilien</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Seniorenwohnen</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Finanzierungsrechner</a></li>
+
+            </ul>
+        </article>
+
+    </section>
+
+</div> <!--end of section3-wrapper-->
+
+<div id="section6-wrapper-smart" style="width:100%; background-color:#eee8e8;">
+
+    <section id="section6-smart" style="max-width:95%;  height:300px;  position:relative; margin:0px auto;z-index:99999999;">
+
+
+        <article id="article1-smart" style="width:170px; position:absolute; height:300px; float:left; left:0%;  ">
+            
+            <h4 style="margin-left:10px; margin-top:50px; ">Kaufen</h4>
+            <br />
+
+            <ul class="link-menu-smart">
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Haus kaufen</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Wohnung kaufen</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Grundstücke</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Zwangsversteigerung</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">weitere</a></li>
+
+            </ul>
+
+            <style type="text/css">
+                .link-menu-smart {
+                    margin-left: -30px;
+                    /*width:150px;*/
+
+                }
+
+                    .link-menu-smart > li {
+                        list-style: none;
+                        width:160px;
+                    }
+
+                        .link-menu-smart > li > a {
+                            color: #000;
+                            font-size: 1em;
+                        }
+
+                            .link-menu-smart > li > a:hover {
+                                text-decoration: none;
+                                color: red
+                            }
+            </style>
+
+        </article>
+
+        <article id="article2-smart" style="width:170px; height:300px; position:absolute; float:left; left:25%;  ">
+           
+            <h4 style="margin-left:10px; margin-top:50px; ">Mieten</h4>
+            <br />
+            <ul class="link-menu-smart">
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Wohnung mieten</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Haus mieten</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Wohnen auf Zeit</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">WGs</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">weitere ...</a></li>
+
+            </ul>
+
+
+
+        </article>
+
+
+        <article id="article3-smart" style="width:170px; height:300px; float:left;  position:absolute; margin-left:50%; ">
+
+            <h4 style="margin-left:10px; margin-top:50px; ">Bauen</h4>
+            <br />
+            <ul class="link-menu-smart">
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;   margin-right:10px;" aria-hidden="true"></i><a href="#">Hausbau & Kataloge</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Fertighäuser</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Massivhäuser</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Musterhäuser</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;   margin-right:10px;" aria-hidden="true"></i><a href="#">Musterhausparks</a></li>
+
+            </ul>
+        </article>
+
+        <article id="article4-smart" style="width:170px; height:300px; float:left; left:75%; position:absolute;  ">
+
+            <h3 style="margin-left:10px; margin-top:50px;">Sonstiges</h3>
+
+            <br />
+            <ul class="link-menu-smart">
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Renditeobjekte</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Immobilien Projekte</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Auslandsimmobilien</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Seniorenwohnen</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Finanzierungsrechner</a></li>
+
+            </ul>
+        </article>
+
+    </section>
+
+</div> <!--end of section3-wrapper-->
+
+
+
+
+
+
+
+<div id="footer-pipe1"  style="width:100%; height:10px; background: radial-gradient(white, gray);">
+
+</div>
+
+
+<div id="footer-banner" style="width:100%; height:50px;  position:relative;  z-index:9999999; background-color:white">
+
+    <ul id="footer-banner-ul">
+        <li><a href="javascript:alert('Hilfe & Kontakte')">Hilfe & Kontakte</a></li>
+        <li><a href="javascript:alert('AGB')">AGB</a></li>
+        <li><a href="javascript:alert('Datenschutz')">Datenschutz</a></li>
+        <li><a href="javascript:alert('Impresum')">Impressum</a></li>
+        <li><a href="javascript:alert('Über uns')">Über uns</a></li>
+        <li><a href="javascript:alert('Newsletter')">Newsletter</a></li>
+        <li><a href="javascript:alert('Jobs')">Jobs</a></li>
+        <li><a href="javascript:alert('sitemap')">Sitemap</a></li>
+    </ul>
+
+    <style type="text/css">
+        #footer-banner-ul {
+            margin: 0 auto;
+            position: relative;
+            width: 1100px;
+            /*border: 1px solid red;*/
+         
+        }
+
+            #footer-banner-ul > li {
+                margin-top: 15px;
+                list-style: none;
+                display: inline-block;
+                width: 120px;
+                /*border: 1px solid red;*/
+                text-align: center;
+            }
+
+                #footer-banner-ul > li > a {
+                    color: #000;
+                    font-size: 1.1em;
+                    text-decoration: none;
+                }
+
+                    #footer-banner-ul > li > a:hover {
+                        color: red;
+                    }
+    </style>
+</div>
+
+
+<div id="footer-banner-tablet" style="width:100%; height:50px;  position:relative;  z-index:9999999; background-color:#f1f1f1">
+
+    <ul id="footer-banner-ul-tablet">
+        <li><a href="javascript: alert('test');">Hilfe & Kontakte</a></li>
+        <li><a href="javascript: alert('test');">AGB</a></li>
+        <li><a href="javascript: alert('test');">Datenschutz</a></li>
+        <li><a href="javascript: alert('test');">Impressum</a></li>
+        <li><a href="javascript: alert('test');">Über uns</a></li>
+        <li><a href="javascript: alert('test');">Newsletter</a></li>
+        <li><a href="javascript: alert('test');">Jobs</a></li>
+        <li><a href="javascript: alert('test');">Sitemap</a></li>
+    </ul>
+
+    <style type="text/css">
+        #footer-banner-ul-tablet {
+            margin: 0 auto;
+            position: relative;
+            width: 1000px;
+            /*border: 1px solid red;*/
+        }
+
+            #footer-banner-ul-tablet > li {
+                margin-top: 15px;
+                list-style: none; 
+                display: inline-block;
+                width: 100px;
+                /*border: 1px solid red;*/
+                
+            }
+
+
+                #footer-banner-ul-tablet > li:nth-child(1) {
+                
+                    margin-left:70px;
+                }
+
+
+                #footer-banner-ul-tablet > li:nth-child(2) {
+                    margin-left: 30px;
+                }
+
+
+                #footer-banner-ul-tablet > li:nth-child(3) {
+                    margin-left: -30px;
+                }
+
+                #footer-banner-ul-tablet > li:nth-child(4) {
+                    margin-left: 20px;
+                }
+
+                #footer-banner-ul-tablet > li:nth-child(8) {
+                    margin-left: -20px;
+                }
+
+                #footer-banner-ul-tablet > li > a {
+                    color: #000;
+                    font-size: 1em;
+                    text-decoration: none;
+                    text-align: center;
+                }
+
+                    #footer-banner-ul-tablet > li > a:hover {
+                        color: red;
+                    }
+    </style>
+</div>
+
+
+
+
+<!--footer-pipe2-->
+<div id="footer-pipe2" style="width:100%; height:10px; background: radial-gradient(gray, white);">
+
+</div>
+
+
+
+<!--smart-form-div-->
+<section id="smart-form-div" style="position:relative; top:0px; display:none; width:100%; height:450px;  ">
+
+    <!--Wohnun gmieten-->
+    <p style="position:relative; padding-top:50px; margin-left:14px; margin-top:0px;">Was Suchen Sie</p>
+
+    <article style="position:relative; margin:10px auto; width:95%; height:40px;  ">
+
+        <input id="wohnung-mieten-input-smart" type="text" readonly="readonly" value="Wohnung mieten" class="form-control" style="position:absolute; max-width:100%; background-color:#fff; cursor:pointer"; />
+
+        <i id="fa-angle-down" class="fa fa-angle-down" style="position:absolute; top:10px; right:15px; cursor:pointer; transform:scale(1.3)"></i>
+       
+        <!--show smart div-->
+        <div id="dialogDivSection3Btn1Show-smart" style="position:absolute; z-index:999999999999999; box-shadow:3px 4px 5px gray; display:none; color:#000; background-color:#fff; width:100%; height:1100px; left:0px; top:40px;">
+
+            <article id="article1-smart">
+
+                <ul class="ul-radio-smart">
+                    <li><h4>Mieten</h4></li>
+
+                    <li><input id="radio1-smart" type="radio" ng-model="content" value="first" style="padding-top:30px;" /><span> Wohnung</span></li>
+                    <li><input id="radio2-smart" type="radio" ng-model="content" value="second" ng-click="someFunction(content)" /><span> Haus</span></li>
+                    <li><input id="radio3-smart" type="radio" ng-model="content" value="third" ng-click="someFunction(content)" /><span> Wohnen auf Zeit</span></li>
+                    <li><input id="radio4-smart" type="radio" ng-model="content" value="fifth" ng-click="someFunction(content)" /><span> Garage/stellplatz</span></li>
+                    <li><input id="radio5-smart" type="radio" ng-model="content" value="seventh" ng-click="someFunction(content)" /><span> Grundstück</span></li>
+                    <li><input id="radio6-smart" type="radio" ng-model="content" value="eight" ng-click="someFunction(content)" /><span> Neubauprojekt</span></li>
+                    <li><input id="radio7-smart" type="radio" ng-model="content" value="nineth" ng-click="someFunction(content)" /><span> Sonstiges</span></li>
+
+                </ul>
+
+            </article>
+
+            <article id="article2-smart">
+
+                <ul class="ul-radio-smart">
+                    <li><h4>Kaufen</h4></li>
+                    <li><input id="radio8-smart" type="radio" ng-model="content2" value="first" style="padding-top:30px;" /><span> Wohnung</span></li>
+                    <li><input id="radio9-smart" type="radio" ng-model="content2" value="second" /><span> Haus</span></li>
+                    <li><input id="radio10-smart" type="radio" ng-model="content2" value="third" /><span> Wohnen auf Zeit</span></li>
+                    <li><input id="radio11-smart" type="radio" ng-model="content2" value="fifth" /><span> Garage/stellplatz</span></li>
+                    <li><input id="radio12-smart" type="radio" ng-model="content2" value="seventh" /><span> Grundstück</span></li>
+                    <li><input id="radio13-smart" type="radio" ng-model="content2" value="eighth" /><span> Neubauprojekt</span></li>
+                    <li><input id="radio14-smart" type="radio" ng-model="content2" value="nineth" /><span> Sonstiges</span></li>
+
+                </ul>
+
+            </article>
+
+            <article id="article3-smart" s>
+
+                <ul class="ul-radio-smart">
+                    <li> <h4>Anzeige</h4> </li>
+                    <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Hausbau & Kataloge</a></li>
+                    <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Fertighäuser</a></li>
+                    <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Massivhäuser</a></li>
+                    <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Musterhäuser</a></li>
+                    <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Musterhausparks</a></li>
+                    <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Baufinanzierung</a></li>
+                </ul>
+
+            </article>
+
+            <article id="article4-smart">
+
+                <ul class="ul-radio-smart">
+                    <li> <h4>Weiteres</h4> </li>
+                    <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Renditeobjekte</a></li>
+                    <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Neubauprojekte</a></li>
+                    <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Gewerbeimmobilien</a></li>
+                    <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Auslandsimmobilien</a></li>
+                    <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Zwangsversteigerung</a></li>
+                    <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Geldanlage</a></li>
+                </ul>
+
+            </article>
+
+
+            <style type="text/css">
+                .ul-radio-smart {
+                    margin-top: 40px;
+                }
+
+                    .ul-radio-smart > li {
+                        list-style: none;
+                        line-height: 30px;
+                    }
+
+                        .ul-radio-smart > li > a {
+                            color: black;
+                            text-decoration: none;
+                        }
+
+                            .ul-radio-smart > li > a:hover {
+                                color: red;
+                            }
+            </style>
+
+        </div>
+
+    </article>
+
+
+    <!--Ort-->
+    <p style="margin-left:15px">Wo Suchen Sie</p>
+
+    <article style="position:relative; margin:10px auto; width:95%; height:40px;  ">
+
+        <input  id="ort-smart" type="text" class="form-control" placeholder="Frankfurt oder Darmstadt" style="position:absolute; max-width:100%"  />
+        <!-------dialog-div-section3-btn1-show-smart------>
+       
+      
+
+
+    </article>
+
+
+    <!--Mietpreis-->
+    <p style="margin-left:15px">Welcher Ort</p>
+    <article style="position:relative; margin:10px auto; width:95%; height:40px;  ">
+
+        <input id="mietpreis-smart" type="text" readonly="readonly" value="Mietpreis" class="form-control" style="position:absolute; max-width:100%; background-color:#fff; cursor:pointer" ; />
+
+        <i id="mietpreis-fa-angle-down" class="fa fa-angle-down" style="position:absolute; top:10px; right:15px; cursor:pointer; transform:scale(1.3)"></i>
+
+
+        <div id="mietpreisShowDiv-smart" style="position:absolute; display:none; z-index:999999999999999;  left:0px; top:40px;  width:100%; height:350px; background-color:#fff; box-shadow:0px 4px 5px gray">
+
+            <ul class="mietpreis-ul-smart">
+                <li><input id="radioMietpreis1-smart" type="radio" ng-model="content3" value="first" checked="checked" /> <span id="mietpreis-beliebiger" style="margin-left:10px;"> beliebig</span></li>
+                <li><input id="radioMietpreis2-smart" type="radio" ng-model="content3" value="second" /> <span id="bis300" style="margin-left:10px;"> bis 300 €</span></li>
+                <li><input id="radioMietpreis3-smart" type="radio" ng-model="content3" value="third" /> <span style="margin-left:10px;"> bis 400 €</span></li>
+                <li><input id="radioMietpreis4-smart" type="radio" ng-model="content3" value="fourth" /> <span style="margin-left:10px;"> bis 500 €</span></li>
+                <li><input id="radioMietpreis5-smart" type="radio" ng-model="content3" value="fifth" /> <span style="margin-left:10px;"> bis 600 €</span></li>
+                <li><input id="radioMietpreis6-smart" type="radio" ng-model="content3" value="sixt" /> <span style="margin-left:10px;"> bis 700 €</span></li>
+                <li><input id="radioMietpreis7-smart" type="radio" ng-model="content3" value="seventh" /> <span style="margin-left:10px;"> bis 800 €</span></li>
+            </ul>
+
+
+            <style type="text/css">
+                .mietpreis-ul-smart {
+                    padding-top: 0px;
+                    margin-top:30px;
+                }
+
+                    .mietpreis-ul-smart > li {
+                        list-style: none;
+                        width: 150px;
+                        height: 40px;
+                    }
+
+                        .mietpreis-ul-smart > li > a {
+                            font-size: 1.4em;
+                        }
+
+                            .mietpreis-ul-smart > li > a:hover {
+                                /*background-color:yellow;*/
+                            }
+            </style>
+        </div>
+
+    </article>
+
+
+
+    <!--Wohnflaeche-->
+    <article style="position:relative; margin:10px auto; width:95%; height:40px;  ">
+
+        <input id="wohnflaeche-smart" type="text" readonly="readonly" value="Wohnflaeche" class="form-control" style="position:absolute; max-width:100%; background-color:#fff; cursor:pointer" ; />
+
+        <i class="fa fa-angle-down" style="position:absolute; top:10px; right:15px; cursor:pointer; transform:scale(1.3)"></i>
+
+        <!--wohnflaecheShowDiv-smart-->
+        <div id="wohnflaecheShowDiv-smart" style="position:absolute; z-index:9999999; display:none; left:0px; top:40px; width:100%; height:350px; background-color:#fcfcfc; box-shadow:0px 4px 5px gray">
+
+            <ul class="mietpreis-ul-smart">
+                <li><input id="radioWohnflaeche1-smart" type="radio" ng-model="content3" value="first" checked="checked" /> <span id="mietpreis-beliebiger" style="margin-left:10px;"> beliebig</span></li>
+                <li><input id="radioWohnflaeche2-smart" type="radio" ng-model="content3" value="second" /> <span style="margin-left:10px;"> ab 40 qm²</span></li>
+                <li><input id="radioWohnflaeche3-smart" type="radio" ng-model="content3" value="third" /> <span style="margin-left:10px;"> ab 60 qm²</span></li>
+                <li><input id="radioWohnflaeche4-smart" type="radio" ng-model="content3" value="fourth" /> <span style="margin-left:10px;"> ab 80 qm²</span></li>
+                <li><input id="radioWohnflaeche5-smart" type="radio" ng-model="content3" value="fifth" /> <span style="margin-left:10px;"> ab 100 qm²</span></li>
+                <li><input id="radioWohnflaeche6-smart" type="radio" ng-model="content3" value="sixt" /> <span style="margin-left:10px;"> ab 120 qm²</span></li>
+                <li><input id="radioWohnflaeche7-smart" type="radio" ng-model="content3" value="seventh" /> <span style="margin-left:10px;"> ab 140 qm²</span></li>
+            </ul>
+
+
+            <style type="text/css">
+                .mietpreis-ul-smart {
+                    padding-top: 10px;
+                }
+
+                    .mietpreis-ul-smart > li {
+                        list-style: none;
+                        width: 250px;
+                        height: 40px;
+                    }
+
+                        .mietpreis-ul-smart > li > a {
+                           font-size: 1.4em;
+                        }
+            </style>
+        </div>
+
+
+
+
+
+    </article>
+
+
+    <!--zimmer-->
+    <article style="position:relative; margin:10px auto; width:95%; height:40px;  ">
+
+        <input id="zimmer-smart" type="text" readonly="readonly" value="Zimmer" class="form-control" style="position:absolute; max-width:100%; background-color:#fff; cursor:pointer" ; />
+
+        <i class="fa fa-angle-down" style="position:absolute; top:10px; right:15px; cursor:pointer; transform:scale(1.3)"></i>
+        
+        <div id="zimmerShowDiv-smart" style="position:absolute; z-index:9999999; display:none;  left:0px; top:40px; width:100%; height:320px; background-color:#fcfcfc; box-shadow:0px 4px 5px gray">
+
+            <ul class="zimmerShowDiv-ul-smart">
+                <li><input id="radiozimmer1-smart" type="radio" ng-model="content3" value="first" checked="checked" /> <span id="mietpreis-beliebiger" style="margin-left:10px;"> beliebig</span></li>
+                <li><input id="radiozimmer2-smart" type="radio" ng-model="content3" value="second" /> <span style="margin-left:10px;"> ab 3 Zimmer</span></li>
+                <li><input id="radiozimmer3-smart" type="radio" ng-model="content3" value="third" /> <span style="margin-left:10px;"> ab 4 Zimmer</span></li>
+                <li><input id="radiozimmer4-smart" type="radio" ng-model="content3" value="fourth" /> <span style="margin-left:10px;"> ab 5 Zimmer</span></li>
+                <li><input id="radiozimmer5-smart" type="radio" ng-model="content3" value="fifth" /> <span style="margin-left:10px;"> ab 6 Zimmer</span></li>
+                <li><input id="radiozimmer6-smart" type="radio" ng-model="content3" value="sixt" /> <span style="margin-left:10px;"> ab 7 Zimmer</span></li>
+                <li><input id="radiozimmer7-smart" type="radio" ng-model="content3" value="seventh" /> <span style="margin-left:10px;"> ab 8 Zimmer</span></li>
+            </ul>
+
+
+            <style type="text/css">
+                .zimmerShowDiv-ul-smart {
+                    padding-top: 20px;
+                    margin-left: -20px;
+                }
+
+                    .zimmerShowDiv-ul-smart > li {
+                        list-style: none;
+                        width: 220px;
+                        height: 40px;
+                    }
+
+                        .zimmerShowDiv-ul-smart > li > a {
+                            font-size: 1.4em;
+                        }
+            </style>
+        </div>
+
+
+
+    </article>
+
+
+    <article style="position:relative; margin:10px auto; width:95%; height:40px; ">
+        <input type="submit" value="Suchen" onclick="alert('it is stil under construction')" class="btn btn-warning form-control"  style="max-width:100%; position:absolute" />
+    </article>
+
+
+</section>
+
+
+
+
+<div id="anzeige-div-smart-small" style="position:relative; display:none; margin-top:0px;  width:100%; height:150px; background-color:white;">
+
+
+ 
+    <article style="font-size:1em; position:relative; width:80%; height:100px; margin:10px 20px; ">
+        Inserieren Sie auf Timmowelt.de
+        <br />
+        bereits ab <span style="font-size:1.4em "> 19,90 € </span> inkl. MwSt.  
+            
+    </article>
+
+
+    <article style="position:relative; margin:0 auto; margin-top:-30px; width:95%; height:40px;">
+
+            <input type="submit" value="anzeige aufgeben" class="form-control btn btn-default " style="max-width:100%; position:absolute" />
+
+    </article>
+
+
+
+
+    <article style="">
+
+        <figure id="smart-figure" style=" display:none;">
+
+            <img src="~/Images/immbilien.jpg" style="width:100%;position:relative; height:150px;" />
+
+        </figure>
+     
+    </article>
+
+
+</div> 
+
+
+
+
+<div id="section6-wrapper-smart-none-float" style="position:relative; width:100%; height:auto; margin-top:150px; display:none; ">
+
+
+
+
+    <section id="section6-smart-none-float" style="max-width:95%;  height:300px;  position:relative; margin:0px auto;z-index:99999999;">
+
+
+        <article id="article1-smart-none-float" style="">
+
+            <h4 style="margin-left:10px; margin-top:50px; ">Kaufen</h4>
+            <br />
+
+            <ul class="link-menu-smart-none-float">
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Haus kaufen</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Wohnung kaufen</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Grundstücke</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Zwangsversteigerung</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">weitere</a></li>
+
+            </ul>
+
+            <style type="text/css">
+                .link-menu-smart-none-float {
+
+                    margin-top:0px;
+                    margin-left: -30px;
+                    /*width:150px;*/
+                }
+
+                    .link-menu-smart-none-float > li {
+                        list-style: none;
+                        width: 160px;
+                    }
+
+                        .link-menu-smart-none-float > li > a {
+                            color: #000;
+                            font-size: 1em;
+                        }
+
+                            .link-menu-smart-none-float > li > a:hover {
+                                text-decoration: none;
+                                color: red
+                            }
+            </style>
+
+        </article>
+
+        <article id="article2-smart-none-float" style=" ">
+
+            <h4 style="margin-left:10px;  margin-top:50px; ">Mieten</h4>
+            <br />
+            <ul class="link-menu-smart-none-float">
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Wohnung mieten</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Haus mieten</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Wohnen auf Zeit</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">WGs</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">weitere ...</a></li>
+
+            </ul>
+
+
+
+        </article>
+
+
+        <article id="article3-smart-none-float" style="">
+
+            <h4 style="margin-left:10px; margin-top:50px; ">Bauen</h4>
+            <br />
+            <ul class="link-menu-smart-none-float">
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;   margin-right:10px;" aria-hidden="true"></i><a href="#">Hausbau & Kataloge</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Fertighäuser</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Massivhäuser</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Musterhäuser</a></li>
+
+                <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;   margin-right:10px;" aria-hidden="true"></i><a href="#">Musterhausparks</a></li>
+
+            </ul>
+        </article>
+
+        <article id="article4-smart-none-float" style="">
+
+                    <h4 style="margin-left:10px; margin-top:50px;">Sonstiges</h4>
+
+                    <br />
+                    <ul class="link-menu-smart-none-float">
+                        <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Renditeobjekte</a></li>
+
+                        <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Immobilien Projekte</a></li>
+
+                        <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Auslandsimmobilien</a></li>
+
+                        <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Seniorenwohnen</a></li>
+
+                        <li><i class="fa fa-angle-right " style="transform:scale(1.3); color:orange;  margin-right:10px;" aria-hidden="true"></i><a href="#">Finanzierungsrechner</a></li>
+
+                    </ul>
+          </article>
+
+        </section>
+
+</div> 
+
+<!--end of section3-wrapper-->
+
+
+
+<div id="smart-footer-div" style="position:absolute;   text-align:center;  display:none; top:1570px; color:#000; width:100%; height:23px; background-color:#ffb200; border:1px solid #482721" >
+    <p style="font-weight:bold">
+        @DateTime.Today.Date.ToShortDateString()
+    </p> 
+</div>
+
+
+
+
+    <!-===========================================================================-->
+    @section scripts{
+
+        <script src="~/Scripts/angular.js"></script>
+        <script src="~/Scripts/angular-route.js"></script>
+
+        <link href="~/Content/angular-material.css" rel="stylesheet" />
+        <script src="~/Scripts/angular-material.js"></script>
+        <script src="~/Scripts/angular-aria.js"></script>
+        <script src="~/Scripts/angular-animate.js"></script>
+        <script src="~/Scripts/angular-messages.js"></script>
+
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <link href="~/Content/index.css" rel="stylesheet" />
+        <script type="text/javascript">
+
+
+            //jquery-----------------------------------------------------------
+
+            $(document).ready(function () {
+
+
+
+                $("#suchButton").on("click", function () {
+
+                    //$("#pDiv").css({'display':'none'});
+
+                });
+
+
+                
+                $("#btn-close").on("click", function () {
+
+
+
+                    $('#section3').hide();
+
+                    $("#imageText").css({ 'margin-top': '-300px' });
+
+                    //if ($(window).width() < 880) {
+                    //    $("#imageText").css({'margin-top':'-200px'});
+                    //}
+
+                   
+
+                });
+
+
+
+
+                //var _hasBeenClicked = false;
+
+                //$("#btn-close").on("click", function () {
+              
+                //    _hasBeenClicked = true;
+                //});
+
+
+                //if (_hasBeenClicked == true) {
+                //    alert("it has been geklickt");
+
+                //}
+                //else {
+
+                //}
+
+
+
+
+                $("#Anzeige-aufgeben").on("click", function () {
+
+                    alert("Anzeige aufgeben");
+
+                });
+
+
+                $("#mdButton1").on("click", function () {
+                    $("#input1").val("");
+                });
+
+
+
+                $("#input1").focus(function () {
+                    $("#input1").val("");
+
+                });
+
+
+                //if (jQuery('#btn-close').data('clicked')) {
+
+                //    alert("geklickt");
+
+                //}
+                //else {
+
+                //}
+
+                //var _hasBeenClicked = false;
+                //$("#btn-close").on("click", function () {
+
+                //    _hasBeenClicked = true;
+                //});
+
+                //if (_hasBeenClicked == true)
+                //{
+                //    alert("it has been geklickt");
+
+                //}
+
+
+
+            //$(window).resize(function () {
+
+            //    var _windowWidth = $(window).width();
+            //    if (_windowWidth < 980)
+            //    {
+
+            //        if ($("#btn-close").data('clicked','true')) {
+
+            //            $("#imageText").css({ 'top': '-150px' });
+
+            //        }
+
+            //    }
+
+            //});
+
+
+            });  // end of jquery
+
+
+
+
+
+            //angular----------------------------------------------------------
+
+            //var app = angular.module("firstApp", ["ngMaterial", "ngRoute"]);
+
+            app.controller("personCtrl", function ($scope) {
+
+                //variables
+                $scope.text11 = "";
+                $scope.CssColor = 'blue';
+                $scope.myCounter = false;
+
+
+
+                //functions
+                $scope.giveAlert = function () {
+
+                    alert("Data sent");
+                }
+
+
+                $scope.someText = function () {
+
+                    $scope.text11 = "hello text11";
+                    //alert();
+                }
+
+                $scope.changeCounter = function () {
+                    //if ($scope.myCounter === false) {
+                    //    $scope.myCounter = true;
+
+                    //}
+
+                    //else {
+                    //    $scope.myCounter = false;
+                    //}#
+                    $scope.myCounter = !$scope.myCounter;
+
+                }
+
+
+            })  // end of personCtrl
+
+
+
+
+
+                .controller('dateController', dateController);
+
+            function dateController($scope) {
+
+                $scope.myDate = new Date();
+
+                $scope.minDate = new Date(
+                    $scope.myDate.getFullYear(),
+                    $scope.myDate.getMonth() - 2,
+                    $scope.myDate.getDate());
+
+                $scope.maxDate = new Date(
+                    $scope.myDate.getFullYear() + 2,
+                    $scope.myDate.getMonth() + 2,
+                    $scope.myDate.getDate());
+
+            }
+
+
+
+
+        </script>
+
+
+    }

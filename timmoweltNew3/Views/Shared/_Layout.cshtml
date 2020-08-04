@@ -1,0 +1,3913 @@
+﻿<!DOCTYPE html>
+<html ng-app="firstApp">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Side from Hasan Sevim</title>
+    @Styles.Render("~/Content/css")
+            @Scripts.Render("~/bundles/modernizr")
+
+    <!--=================================================================-->
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-route.js"></script>
+
+    @*<link href="~/Content/angular-material.css" rel="stylesheet" />*@
+    <script src="~/Scripts/angular-material.js"></script>
+    <script src="~/Scripts/angular-aria.js"></script>
+    <script src="~/Scripts/angular-animate.js"></script>
+    <script src="~/Scripts/angular-messages.js"></script>
+
+    <!--CDN Jquery Bootstrap-->
+    <!--jquery js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- bootstrap js -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- bootstrap  CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+
+
+    <link href="~/Content/layout.css" rel="stylesheet" />
+
+
+    <!--=========================================================================-->
+    <script type="text/javascript">
+
+        //jquery-----------------------------------------------------------
+
+        $(document).ready(function () {
+
+            ////////////////////////////////////////////////////////////////////////////////////////
+
+            $(".smart-menu-showDiv-ul > li:nth-child(3)").on("mouseover", function () {
+      
+                $("#smart-menu-showDiv-sub1-ul").css({ 'display': 'block'});
+       
+            });
+
+
+
+            $(".smart-menu-showDiv-ul > li:nth-child(3)").on("mouseleave", function () {
+
+                $("#smart-menu-showDiv-sub1-ul").css({ 'display': 'none' });
+            });
+
+           /////////////////////////////////////////////
+
+            //$("#messageClose").on("click", function () {
+
+            //    $("#messageBox").css({ 'display': 'none' });
+            //});
+
+        //////////////////////////////////////////
+
+
+            var wohnungMietenInputSmartFlag = false;
+
+            $("#wohnung-mieten-input-smart, #fa-angle-down").bind("click", function () {
+                //alert();    
+
+                //$("#dialogDivSection3Btn1Show-smart").css({ 'display': 'block' });
+
+                if (wohnungMietenInputSmartFlag == false) {
+
+                    wohnungMietenInputSmartFlag = true;
+                    $("#dialogDivSection3Btn1Show-smart").css({ 'display': 'block' });
+
+                    $("#mietpreisShowDiv-smart").css({ 'display': 'none' });
+                    $("#wohnflaecheShowDiv-smart").css({ 'display': 'none' });
+                    $("#zimmerShowDiv-smart").css({ 'display': 'none' });
+                }
+
+                else {
+                    wohnungMietenInputSmartFlag = false;
+                    $("#dialogDivSection3Btn1Show-smart").css({ 'display': 'none' });
+
+                }
+
+            });
+
+
+
+            //////////////////////////////////////////
+
+
+          
+
+
+            var mietpreisSmartFlag = false;
+
+            $("#mietpreis-smart").bind("click", function () {
+
+
+                if (mietpreisSmartFlag == false) {
+
+                    mietpreisSmartFlag = true;
+                    $("#mietpreisShowDiv-smart").css({ 'display': 'block' });
+
+                    $("#dialogDivSection3Btn1Show-smart").css({ 'display': 'none' });
+                    $("#wohnflaecheShowDiv-smart").css({ 'display': 'none' });
+                    $("#zimmerShowDiv-smart").css({ 'display': 'none' });
+                }
+
+                else {
+                    mietpreisSmartFlag = false;
+                    $("#mietpreisShowDiv-smart").css({ 'display': 'none' });
+
+                }
+
+            });
+
+            ///////////////wohnflaeche smart/////////////////////
+
+            var wohnflaecheSmartFlag = false;
+
+            $("#wohnflaeche-smart").bind("click", function () {
+                //alert();    
+
+
+
+                if (wohnflaecheSmartFlag == false) {
+
+                    wohnflaecheSmartFlag = true;
+                    $("#wohnflaecheShowDiv-smart").css({ 'display': 'block' });
+
+                    $("#dialogDivSection3Btn1Show-smart").css({ 'display': 'none' });
+                    $("#mietpreisShowDiv-smart").css({ 'display': 'none' });
+                    $("#zimmerShowDiv-smart").css({ 'display': 'none' });
+                }
+
+                else {
+                    wohnflaecheSmartFlag = false;
+                    $("#wohnflaecheShowDiv-smart").css({ 'display': 'none' });
+
+                }
+
+            });
+
+            ////////////////////////////////////
+
+
+            var zimmerSmartFlag = false;
+
+            $("#zimmer-smart, #fa-angle-down").bind("click", function () {
+
+
+                if (zimmerSmartFlag == false) {
+
+                    zimmerSmartFlag = true;
+                    $("#zimmerShowDiv-smart").css({ 'display': 'block' });
+
+                    $("#mietpreisShowDiv-smart").css({ 'display': 'none' });
+                    $("#mietpreisShowDiv-smart").css({ 'display': 'none' });
+                    $("#wohnflaecheShowDiv-smart").css({ 'display': 'none' });
+
+                }
+
+                else {
+                    zimmerSmartFlag = false;
+                    $("#zimmerShowDiv-smart").css({ 'display': 'none' });
+
+                }
+
+            });
+
+
+
+            //////////////////////////////////////////
+
+
+
+            $("#ort-smart").focus(function () {
+
+                $("#dialogDivSection3Btn1Show-smart").css({ 'display': 'none' });
+
+                $("#mietpreisShowDiv-smart").css({ 'display': 'none' });
+
+                $("#wohnflaecheShowDiv-smart").css({ 'display': 'none' });
+
+            });
+
+            ///////////////////////////////////
+
+
+            $("#smart-menu-showDiv-close-btn1").on("click",function () {
+             
+                $('#body1').css({ 'margin-left': '0px', 'transition': 'all 0.5s ease' });
+            });
+
+
+            var smartMenuShowDivFlag =false;
+            $("#hamburgr-menu").on("click", function () {
+
+               
+                if (smartMenuShowDivFlag == false) {
+
+                    smartMenuShowDivFlag = true;
+
+                    $("#smart-menu-showDiv").css({ 'display': 'block' });
+
+                    $('#body1').css({ 'margin-left': '300px', 'transition': 'all 0.4s ease' });
+                    $("#smart-menu-showDiv").css({'margin-left':'-300px', 'margin-top':'-50px'});
+
+                    $(window).css({ 'overflow': 'none' });
+                }
+                else {
+
+                    smartMenuShowDivFlag = false;
+
+                    $("#smart-menu-showDiv").css({ 'display': 'none' });
+
+
+                    $('#body1').css({ 'margin-left': '0px', 'transition': 'all 0.4s ease' });
+                    $("#smart-menu-showDiv").css({ 'margin-left': '0px', 'margin-top': '-50px' });
+
+
+                }
+               
+            });
+
+
+
+
+            var smartMenuShowDivSmartFlag = false;
+            $("#hamburgr-menu-smart").on("click", function () {
+
+
+                if (smartMenuShowDivSmartFlag == false) {
+
+                    smartMenuShowDivSmartFlag = true;
+
+                    $("#smart-menu-showDiv").css({ 'display': 'block' });
+
+                    $('#body1').css({ 'margin-left': '300px', 'transition': 'all 0.4s ease' });
+                    $("#smart-menu-showDiv").css({ 'margin-left': '-300px', 'margin-top': '0px' });
+
+                    $(this).css({ 'color': 'red', 'cursor': 'pointer' });
+
+                    $(window).css({ 'overflow': 'none' });
+                }
+                else {
+
+                    smartMenuShowDivSmartFlag = false;
+
+                    $("#smart-menu-showDiv").css({ 'display': 'none' });
+
+
+                    $('#body1').css({ 'margin-left': '0px', 'transition': 'all 0.4s ease' });
+                    $("#smart-menu-showDiv").css({ 'margin-left': '0px', 'margin-top': '-50px' });
+              
+            
+                }
+
+            });
+
+
+
+            //hamburgr-menu-smart MOUSEOVER
+            $("#hamburgr-menu-smart").on("mouseover", function () {
+
+                $(this).css({ 'color': 'red', 'cursor': 'pointer', 'transition': 'all 0.2s ease'  });
+
+                //$("#hamburgerImage").css({'-webkit-filter':'invert()'});
+ 
+            });
+
+
+              //hamburgr-menu-smart MOUSELEAVE
+            $("#hamburgr-menu-smart").on("mouseleave", function () {
+
+                $(this).css({ 'color': '', 'transition': 'all 0.2s ease'  });
+
+            });
+
+
+            //User symbol mouseover
+            $("#menu-text-smart").bind("mouseover", function () {
+
+                $(this).css({ 'color': 'red', 'cursor': 'pointer', 'transition': 'all 0.2s ease'  });
+            });
+
+
+            //User symbol mouseleave
+            $("#menu-text-smart").bind("mouseleave", function () {
+
+                $(this).css({ 'color': '', 'cursor': 'pointer', 'transition':'all 0.5s ease' });
+            });
+
+
+            //User symbol click
+            $("#menu-text-smart").bind("click", function () {
+
+                alert("user");
+            });
+
+
+
+            $("#Ort").focus(function () {
+
+                $("#dialogDivSection3Btn1Show, #mietpreisDiv, #wohnflaecheShowDiv , #zimmerShowDiv").hide();
+
+            });
+
+
+            $(".mietpreis-ul > li").on("mouseover", function () {
+            
+                $(this).css({ 'background-color': 'gray' });
+                $(this).css({ 'transition': 'all 0.5s ease' });
+                $(this).css({ 'width': '200px' });
+
+            });
+
+
+            $(".mietpreis-ul > li").on("mouseleave", function () {
+       
+                $(this).css({ 'background-color': '' });
+
+            });
+
+            $(".mietpreis-ul > li").css({ 'width': '120px' });
+
+
+            //---------------------------tablet dialog-----------------------------------------
+
+            $("#Ort-tablet").focus(function () {
+
+                $("#dialogDivSection3Btn1Show-tablet, #mietpreisDiv-tablet, #wohnflaecheShowDiv-tablet, #wohnflaecheShowDiv-tablet, #zimmerShowDiv-tablet").css({ 'display':'none' });
+
+            });
+
+
+
+            //--------------------------------------------------------------------
+
+
+
+
+
+            $(".zimmerShowDiv-ul > li").on("mouseover", function () {
+
+                $(this).css({ 'background-color': 'gray' });
+                $(this).css({ 'transition': 'all 0.5s ease' });
+                $(this).css({ 'width': '190px' });
+
+            });
+
+
+            $(".zimmerShowDiv-ul > li").on("mouseleave", function () {
+
+                $(this).css({ 'background-color': '' });
+
+            });
+
+            $(".zimmerShowDiv-ul > li").css({ 'width': '120px' });
+
+            //------------
+
+
+         
+
+
+            if ( $("#suchButton").val() == "") {
+
+                $("#suchButton").val("suchen");
+            }
+
+
+            if ($("#suchButton-tablet").val() == "") {
+
+                $("#suchButton-tablet").val("suchen");
+            }
+            
+
+            //if ($("#suchButton-smart").val() == "") {
+
+            //    $("#suchButton-smart").val("suchen");
+            //}
+
+            
+         
+
+            //show1--------------------------------------------------------------
+
+            $("#show1DivMaske").on("mouseover", function () {
+
+                $("#show1").show();
+                $("#header-menu-ul > li:nth-child(1)").css({ 'background-color': '#fbfbfb' });
+
+            });
+
+
+            $("#show1DivMaske").on("mouseleave", function () {
+
+                $("#show1").hide();
+                $("#header-menu-ul > li:nth-child(1)").css({ 'background-color': '' });
+
+            });
+
+
+            $("#show1").on("mouseover", function () {
+
+                $("#header-menu-ul > li:nth-child(1)").css({ 'background-color': '#fbfbfb' });
+                $(this).show();
+
+            });
+
+
+            $("#show1").on("mouseleave", function () {
+
+                $(this).hide();
+                $("#header-menu-ul > li:nth-child(1)").css({ 'background-color': '' });
+
+            });
+
+
+
+            //show2--------------------------------------------------------------
+
+            $("#show2DivMaske").on("mouseover", function () {
+
+                $("#show2").show();
+                $("#header-menu-ul > li:nth-child(2)").css({ 'background-color': '#fbfbfb' });
+
+
+            });
+
+
+            $("#show2DivMaske").on("mouseleave", function () {
+
+                $("#show2").hide();
+                $("#header-menu-ul > li:nth-child(2)").css({ 'background-color': '' });
+
+            });
+
+
+            $("#show2").on("mouseover", function () {
+
+                $("#header-menu-ul > li:nth-child(2)").css({ 'background-color': '#fbfbfb' });
+                $(this).show();
+
+            });
+
+
+            $("#show2").on("mouseleave", function () {
+
+                $(this).hide();
+                $("#header-menu-ul > li:nth-child(2)").css({ 'background-color': '' });
+
+            });
+
+
+
+
+
+            //show3--------------------------------------------------------------
+
+            $("#show3DivMaske").on("mouseover", function () {
+
+                $("#show3").show();
+                $("#header-menu-ul > li:nth-child(3)").css({ 'background-color': '#fbfbfb' });
+
+            });
+
+
+            $("#show3DivMaske").on("mouseleave", function () {
+
+                $("#show3").hide();
+                $("#header-menu-ul > li:nth-child(3)").css({ 'background-color': '' });
+
+            });
+
+
+
+            $("#show3").on("mouseover", function () {
+
+                $("#header-menu-ul > li:nth-child(3)").css({ 'background-color': '#fbfbfb' });
+                $(this).show();
+
+            });
+
+
+            $("#show3").on("mouseleave", function () {
+
+                $(this).hide();
+                $("#header-menu-ul > li:nth-child(3)").css({ 'background-color': '' });
+
+            });
+
+
+
+
+            //show4--------------------------------------------------------------
+
+            $("#show4DivMaske").on("mouseover", function () {
+
+                $("#show4").show();
+                $("#header-menu-ul > li:nth-child(4)").css({ 'background-color': '#fbfbfb' });
+
+            });
+
+
+            $("#show4DivMaske").on("mouseleave", function () {
+
+                $("#show4").hide();
+                $("#header-menu-ul > li:nth-child(4)").css({ 'background-color': '' });
+
+            });
+
+
+            $("#show4").on("mouseover", function () {
+
+                $("#header-menu-ul > li:nth-child(4)").css({ 'background-color': '#fbfbfb' });
+                $(this).show();
+
+            });
+
+
+            $("#show4").on("mouseleave", function () {
+
+                $(this).hide();
+                $("#header-menu-ul > li:nth-child(4)").css({ 'background-color': '' });
+
+            });
+
+
+
+
+
+            //show5--------------------------------------------------------------
+
+            $("#show5DivMaske").on("mouseover", function () {
+
+                $("#show5").show();
+                $("#header-menu-ul > li:nth-child(5)").css({ 'background-color': '#fbfbfb' });
+
+            });
+
+
+            $("#show5DivMaske").on("mouseleave", function () {
+
+                $("#show5").hide();
+                $("#header-menu-ul > li:nth-child(5)").css({ 'background-color': '' });
+
+            });
+
+
+            $("#show5").on("mouseover", function () {
+
+                $("#header-menu-ul > li:nth-child(5)").css({ 'background-color': '#fbfbfb' });
+                $(this).show();
+
+            });
+
+
+            $("#show5").on("mouseleave", function () {
+
+                $(this).hide();
+                $("#header-menu-ul > li:nth-child(5)").css({ 'background-color': '' });
+
+            });
+
+
+
+
+
+            //show6--------------------------------------------------------------
+
+            $("#show6DivMaske").on("mouseover", function () {
+
+                $("#show6").show();
+                $("#header-menu-ul > li:nth-child(6)").css({ 'background-color': '#fbfbfb' });
+
+            });
+
+
+            $("#show6DivMaske").on("mouseleave", function () {
+
+                $("#show6").hide();
+                $("#header-menu-ul > li:nth-child(6)").css({ 'background-color': '' });
+
+            });
+
+
+
+            $("#show6").on("mouseover", function () {
+
+                $("#header-menu-ul > li:nth-child(6)").css({ 'background-color': '#fbfbfb' });
+                $(this).show();
+
+            });
+
+
+            $("#show6").on("mouseleave", function () {
+
+                $(this).hide();
+                $("#header-menu-ul > li:nth-child(6)").css({ 'background-color': '' });
+
+            });
+
+
+
+
+
+
+            //show7--------------------------------------------------------------
+
+            $("#show7DivMaske").on("mouseover", function () {
+
+                $("#show7").show();
+                $("#header-menu-ul > li:nth-child(7)").css({ 'background-color': '#fbfbfb' });
+
+            });
+
+
+            $("#show7DivMaske").on("mouseleave", function () {
+
+                $("#show7").hide();
+                $("#header-menu-ul > li:nth-child(7)").css({ 'background-color': '' });
+
+            });
+
+
+
+
+            $("#show7").on("mouseover", function () {
+
+                $("#header-menu-ul > li:nth-child(7)").css({ 'background-color': '#fbfbfb' });
+                $(this).show();
+
+            });
+
+
+            $("#show7").on("mouseleave", function () {
+
+                $(this).hide();
+                $("#header-menu-ul > li:nth-child(7)").css({ 'background-color': '' });
+
+            });
+
+
+
+
+
+
+            ///////////radio-----------------------------------------------------////////////////////////////////////////////////
+
+            $("#radio1").bind("click", function () {
+
+                //var _val = $("#dialogDivSection3Btn1-p1").val();
+                $("#dialogDivSection3Btn1-p1").val("Wohnung mieten");
+
+                $("#dialogDivSection3Btn1Show").css({ 'display': 'none' });
+
+            });
+
+
+  //smart
+            $("#radio1-smart").bind("click", function () {
+
+                //var _val = $("#dialogDivSection3Btn1-p1").val();
+                $("#wohnung-mieten-input-smart").val("Wohnung mieten");
+
+                $("#dialogDivSection3Btn1Show-smart").css({ 'display': 'none' });
+
+            });
+
+
+          
+            $("#radio2").bind("click", function () {
+
+
+
+                var _val = $("#dialogDivSection3Btn1-p2").val();
+                $("#dialogDivSection3Btn1-p1").val(_val);
+
+                $("#dialogDivSection3Btn1Show").css({ 'display': 'none' });
+
+            });
+
+
+            //smart
+            $("#radio2-smart").bind("click", function () {
+
+                $("#wohnung-mieten-input-smart").val("Haus mieten");
+
+                $("#dialogDivSection3Btn1Show-smart").css({ 'display': 'none' });
+
+            });
+
+
+            $("#radio3").bind("click", function () {
+
+
+
+                var _val = $("#dialogDivSection3Btn1-p3").val();
+                $("#dialogDivSection3Btn1-p1").val(_val);
+
+                $("#dialogDivSection3Btn1Show").css({ 'display': 'none' });
+
+            });
+
+
+            //smart
+
+            $("#radio3-smart").bind("click", function () {
+
+                $("#wohnung-mieten-input-smart").val("Mieten Wohnen auf Zeit");
+
+
+                $("#dialogDivSection3Btn1Show-smart").css({ 'display': 'none' });
+
+            });
+
+
+
+            $("#radio4").bind("click", function () {
+
+                var _val = $("#dialogDivSection3Btn1-p4").val();
+                $("#dialogDivSection3Btn1-p1").val(_val);
+
+                $("#dialogDivSection3Btn1Show").css({ 'display': 'none' });
+
+            });
+
+
+            $("#radio4-smart").bind("click", function () {
+
+                $("#wohnung-mieten-input-smart").val("Mieten Garage/stellplatz");
+
+                $("#dialogDivSection3Btn1Show-smart").css({ 'display': 'none' });
+
+            });
+
+
+            $("#radio5").bind("click", function () {
+
+
+
+                var _val = $("#dialogDivSection3Btn1-p5").val();
+                $("#dialogDivSection3Btn1-p1").val(_val);
+
+                $("#dialogDivSection3Btn1Show").css({ 'display': 'none' });
+
+            });
+
+
+            //smart
+            $("#radio5-smart").bind("click", function () {
+
+                $("#wohnung-mieten-input-smart").val("Mieten Grundstück");
+
+                $("#dialogDivSection3Btn1Show-smart").css({ 'display': 'none' });
+
+            });
+
+
+            $("#radio6").bind("click", function () {
+
+
+
+                var _val = $("#dialogDivSection3Btn1-p6").val();
+                $("#dialogDivSection3Btn1-p1").val(_val);
+
+                $("#dialogDivSection3Btn1Show").css({ 'display': 'none' });
+
+            });
+
+
+
+            //smart
+            $("#radio6-smart").bind("click", function () {
+
+                $("#wohnung-mieten-input-smart").val("Mieten Neubauprojekt");
+
+                $("#dialogDivSection3Btn1Show-smart").css({ 'display': 'none' });
+
+            });
+
+
+
+            $("#radio7").bind("click", function () {
+
+
+
+                var _val = $("#dialogDivSection3Btn1-p7").val();
+                $("#dialogDivSection3Btn1-p1").val(_val);
+
+                $("#dialogDivSection3Btn1Show").css({ 'display': 'none' });
+
+            });
+
+
+            //smart
+            $("#radio7-smart").bind("click", function () {
+
+                $("#wohnung-mieten-input-smart").val("Mieten sonstiges");
+
+                $("#dialogDivSection3Btn1Show-smart").css({ 'display': 'none' });
+
+            });
+
+
+
+
+            ////////
+
+
+            $("#radio8").bind("click", function () {
+
+
+                var _val = $("#dialogDivSection3Btn1-p8").val();
+                $("#dialogDivSection3Btn1-p1").val(_val);
+
+                $("#dialogDivSection3Btn1Show").css({ 'display': 'none' });
+
+            });
+
+
+            //smart
+            $("#radio8-smart").bind("click", function () {
+
+                $("#wohnung-mieten-input-smart").val("Kaufen Wohnung");
+
+                $("#dialogDivSection3Btn1Show-smart").css({ 'display': 'none' });
+
+            });
+
+
+
+            $("#radio9").bind("click", function () {
+
+
+
+                var _val = $("#dialogDivSection3Btn1-p9").val();
+                $("#dialogDivSection3Btn1-p1").val(_val);
+
+                $("#dialogDivSection3Btn1Show").css({ 'display': 'none' });
+
+            });
+
+
+            //smart
+            $("#radio9-smart").bind("click", function () {
+
+                $("#wohnung-mieten-input-smart").val("Kaufen Haus");
+
+                $("#dialogDivSection3Btn1Show-smart").css({ 'display': 'none' });
+
+            });
+
+
+            $("#radio10").bind("click", function () {
+
+
+                var _val = $("#dialogDivSection3Btn1-p10").val();
+                $("#dialogDivSection3Btn1-p1").val(_val);
+
+                $("#dialogDivSection3Btn1Show").css({ 'display': 'none' });
+
+            });
+
+
+            //smart
+            $("#radio10-smart").bind("click", function () {
+
+                $("#wohnung-mieten-input-smart").val("Kaufen wohnen auf Zeit");
+
+                $("#dialogDivSection3Btn1Show-smart").css({ 'display': 'none' });
+
+            });
+
+
+
+            $("#radio11").bind("click", function () {
+
+
+                var _val = $("#dialogDivSection3Btn1-p11").val();
+                $("#dialogDivSection3Btn1-p1").val(_val);
+
+                $("#dialogDivSection3Btn1Show").css({ 'display': 'none' });
+
+            });
+
+
+            //smart
+            $("#radio11-smart").bind("click", function () {
+
+                $("#wohnung-mieten-input-smart").val("Kaufen Garage/stellplatz");
+
+                $("#dialogDivSection3Btn1Show-smart").css({ 'display': 'none' });
+
+            });
+
+
+
+            $("#radio12").bind("click", function () {
+
+
+                var _val = $("#dialogDivSection3Btn1-p12").val();
+                $("#dialogDivSection3Btn1-p1").val(_val);
+
+                $("#dialogDivSection3Btn1Show").css({ 'display': 'none' });
+
+            });
+
+
+            //smart
+            $("#radio12-smart").bind("click", function () {
+
+                $("#wohnung-mieten-input-smart").val("Kaufen Grundstück");
+
+                $("#dialogDivSection3Btn1Show-smart").css({ 'display': 'none' });
+
+            });
+
+
+
+
+            $("#radio13").bind("click", function () {
+
+
+                var _val = $("#dialogDivSection3Btn1-p13").val();
+                $("#dialogDivSection3Btn1-p1").val(_val);
+
+                $("#dialogDivSection3Btn1Show").css({ 'display': 'none' });
+
+            });
+
+
+            //smart
+            $("#radio13-smart").bind("click", function () {
+
+                $("#wohnung-mieten-input-smart").val("Kaufen Neubauprojekt");
+
+                $("#dialogDivSection3Btn1Show-smart").css({ 'display': 'none' });
+
+            });
+
+
+
+            $("#radio14").bind("click", function () {
+
+
+                var _val = $("#dialogDivSection3Btn1-p14").val();
+                $("#dialogDivSection3Btn1-p1").val(_val);
+
+                $("#dialogDivSection3Btn1Show").css({ 'display': 'none' });
+
+            });
+
+
+            //smart
+            $("#radio14-smart").bind("click", function () {
+
+                $("#wohnung-mieten-input-smart").val("Kaufen sonstiges");
+
+                $("#dialogDivSection3Btn1Show-smart").css({ 'display': 'none' });
+
+            });
+
+
+
+            $("#radio15").bind("click", function () {
+
+
+                var _val = $("#dialogDivSection3Btn1-p15").val();
+                $("#dialogDivSection3Btn1-p1").val(_val);
+
+                $("#dialogDivSection3Btn1Show").css({ 'display': 'none' });
+
+            });
+
+
+
+
+
+
+            //////////------------------------------------------------------------
+
+
+
+            /////////////
+            $("#wohnflaeche").bind("mouseover", function () {
+
+                $(this).css({ 'background-color': 'white' });
+                $(this).css({ 'border': '1px solid gray' });
+
+            });
+
+
+            $("#wohnflaeche").bind("mouseleave", function () {
+
+                $(this).css({ 'background-color': 'rgba(255,255,255,0)' });
+                $(this).css({ 'border': 'none' });
+
+
+            });
+
+
+            $("#zimmer").bind("mouseover", function () {
+
+                $(this).css({ 'background-color': 'white' });
+                $(this).css({ 'border': '1px solid gray' });
+
+            });
+
+
+            $("#zimmer").bind("mouseleave", function () {
+
+                $(this).css({ 'background-color': 'rgba(255,255,255,0)' });
+                $(this).css({ 'border': 'none' });
+
+
+            });
+
+
+
+            $("#mietpreis").bind("mouseover", function () {
+
+                $(this).css({ 'background-color': 'white' });
+                $(this).css({ 'border': '1px solid gray' });
+
+            });
+
+
+            $("#mietpreis").bind("mouseleave", function () {
+
+                $(this).css({ 'background-color': 'rgba(255,255,255,0)' });
+                $(this).css({ 'border': 'none' });
+
+
+            });
+
+
+
+            /////////////////////radioMietpreis////////////////////////
+
+
+            //if ($("#mietpreis").val() != "   bis 300 €" && $("#mietpreis").val() != "   bis 400 €" && $("#mietpreis").val() != "   bis 500 €" && $("#mietpreis").val() != "   bis 600 €" && $("#mietpreis").val() != "   bis 700 €" && $("#mietpreis").val() != "   bis 800 €")  {
+
+            
+            //    $("#mietpreis").val("   Mietpreis");
+            //}
+
+
+
+            //if ($("#wohnflaeche").val() != "   ab 40 qm²" && $("#wohnflaeche").val() != "   ab 60 qm²" && $("#wohnflaeche").val() != "   ab 80 qm²" && $("#wohnflaeche").val() != "   ab 100 qm²" && $("#wohnflaeche").val() != "   ab 120 qm²" && $("#wohnflaeche").val() != "   ab 140 qm²") {
+
+
+            //    $("#wohnflaeche").val("   Wohnflaeche");
+            //}
+
+
+            //if ($("#zimmer").val() != "   ab 3 Zimmer" && $("#zimmer").val() != "   ab 4 Zimmer" && $("#zimmer").val() != "   ab 5 Zimmer" && $("#zimmer").val() != "   ab 6 Zimmer" && $("#zimmer").val() != "   ab 7 Zimmer" && $("#zimmer").val() != "   ab 8 Zimmer") {
+
+
+            //    $("#zimmer").val("   Zimmer");
+            //}
+
+
+
+            ////////////////////
+
+            $("#radioMietpreis1").on("click", function () {
+
+
+                $("#mietpreis").val("   Mietpreis" );
+                $("#mietpreisDiv").hide()
+
+            });
+
+
+            //smart
+            $("#radioMietpreis1-smart").on("click", function () {
+
+
+                $("#mietpreis-smart").val("   Mietpreis");
+                $("#mietpreisShowDiv-smart").css({'display':'none'});
+
+            });
+
+
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+
+            $("#radioMietpreis2").on("click", function () {
+
+                $("#mietpreis").val("   bis 300 €");
+                $("#mietpreisDiv").hide();
+    
+            });
+
+
+
+
+            //smart
+            $("#radioMietpreis2-smart").on("click", function () {
+
+
+                $("#mietpreis-smart").val("   bis 300 €");
+                $("#mietpreisShowDiv-smart").css({ 'display': 'none' });
+
+            });
+
+
+         
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radioMietpreis3").on("click", function () {
+
+                $("#mietpreis").val("   bis 400 €");
+                $("#mietpreisDiv").hide();
+
+
+                //$("#form1").submit();
+
+            });
+
+
+
+            //smart
+            $("#radioMietpreis3-smart").on("click", function () {
+
+
+                $("#mietpreis-smart").val("   bis 400 €");
+                $("#mietpreisShowDiv-smart").css({ 'display': 'none' });
+
+            });
+
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radioMietpreis4").on("click", function () {
+
+                $("#mietpreis").val("   bis 500 €");
+                $("#mietpreisDiv").hide();
+
+
+            });
+
+
+
+            //smart
+            $("#radioMietpreis4-smart").on("click", function () {
+
+
+                $("#mietpreis-smart").val("   bis 500 €");
+                $("#mietpreisShowDiv-smart").css({ 'display': 'none' });
+
+            });
+
+
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radioMietpreis5").on("click", function () {
+
+                $("#mietpreis").val("   bis 600 €");
+                $("#mietpreisDiv").hide();
+                
+                //$("#form1").submit();
+
+            });
+
+
+            //smart
+            $("#radioMietpreis5-smart").on("click", function () {
+
+
+                $("#mietpreis-smart").val("   bis 600 €");
+                $("#mietpreisShowDiv-smart").css({ 'display': 'none' });
+
+            });
+
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radioMietpreis6").on("click", function () {
+
+                $("#mietpreis").val("   bis 700 €");
+                $("#mietpreisDiv").hide();
+
+
+            });
+
+
+            //smart
+            $("#radioMietpreis6-smart").on("click", function () {
+
+
+                $("#mietpreis-smart").val("   bis 700 €");
+                $("#mietpreisShowDiv-smart").css({ 'display': 'none' });
+
+            });
+
+
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radioMietpreis7").on("click", function () {
+
+                $("#mietpreis").val("   bis 800 €");
+                $("#mietpreisDiv").hide();
+
+                //$("#form1").submit();
+
+            });
+
+
+            //smart
+            $("#radioMietpreis7-smart").on("click", function () {
+
+
+                $("#mietpreis-smart").val("   bis 800 €");
+                $("#mietpreisShowDiv-smart").css({ 'display': 'none' });
+
+            });
+
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radioWohnflaeche1").on("click", function () {
+
+                $("#wohnflaeche").val("   Wohnflaeche");
+                $("#wohnflaecheShowDiv").css({ 'display': 'none' });
+
+                //$("#form1").submit();
+
+            });
+
+
+            //smart
+            $("#radioWohnflaeche1-smart").on("click", function () {
+
+                $("#wohnflaeche-smart").val("   Wohnflaeche");
+                $("#wohnflaecheShowDiv-smart").css({ 'display': 'none' });
+
+                //$("#form1").submit();
+
+            });
+
+
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radioWohnflaeche2").on("click", function () {
+
+                $("#wohnflaeche").val("   ab 40 qm²");
+                $("#wohnflaecheShowDiv").css({ 'display': 'none' });
+
+                //$("#form1").submit();
+
+            });
+
+
+
+            //smart
+            $("#radioWohnflaeche2-smart").on("click", function () {
+
+                $("#wohnflaeche-smart").val("   ab 40 qm²");
+                $("#wohnflaecheShowDiv-smart").css({ 'display': 'none' });
+
+                //$("#form1").submit();
+
+            });
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radioWohnflaeche3").on("click", function () {
+
+                $("#wohnflaeche").val("   ab 60 qm²");
+                $("#wohnflaecheShowDiv").css({ 'display': 'none' });
+
+                //$("#form1").submit();
+
+            });
+
+
+            //smart
+            $("#radioWohnflaeche3-smart").on("click", function () {
+
+                $("#wohnflaeche-smart").val("   ab 60 qm²");
+                $("#wohnflaecheShowDiv-smart").css({ 'display': 'none' });
+
+                //$("#form1").submit();
+
+            });
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radioWohnflaeche4").on("click", function () {
+
+                //$("#form1").submit();
+
+                $("#wohnflaeche").val("   ab 80 qm²");
+                $("#wohnflaecheShowDiv").css({ 'display': 'none' });
+
+            });
+
+
+            //smart
+            $("#radioWohnflaeche4-smart").on("click", function () {
+
+                $("#wohnflaeche-smart").val("   ab 80 qm²");
+                $("#wohnflaecheShowDiv-smart").css({ 'display': 'none' });
+
+                //$("#form1").submit();
+
+            });
+
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radioWohnflaeche5").on("click", function () {
+
+                $("#wohnflaeche").val("   ab 100 qm²");
+                $("#wohnflaecheShowDiv").css({ 'display': 'none' });
+
+                //$("#form1").submit();
+
+            });
+
+
+            //smart
+            $("#radioWohnflaeche5-smart").on("click", function () {
+
+                $("#wohnflaeche-smart").val("   ab 100 qm²");
+                $("#wohnflaecheShowDiv-smart").css({ 'display': 'none' });
+
+                //$("#form1").submit();
+
+            });
+
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radioWohnflaeche6").on("click", function () {
+
+
+                $("#wohnflaeche").val("   ab 120 qm²");
+                $("#wohnflaecheShowDiv").css({ 'display': 'none' });
+
+                //$("#form1").submit();
+
+            });
+
+
+
+            //smart
+            $("#radioWohnflaeche6-smart").on("click", function () {
+
+                $("#wohnflaeche-smart").val("   ab 120 qm²");
+                $("#wohnflaecheShowDiv-smart").css({ 'display': 'none' });
+
+                //$("#form1").submit();
+
+            });
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radioWohnflaeche7").on("click", function () {
+
+                $("#wohnflaeche").val("   ab 140 qm²");
+                $("#wohnflaecheShowDiv").css({ 'display': 'none' });
+
+                //$("#form1").submit();
+
+            });
+
+
+            //smart
+            $("#radioWohnflaeche7-smart").on("click", function () {
+
+                $("#wohnflaeche-smart").val("   ab 140 qm²");
+                $("#wohnflaecheShowDiv-smart").css({ 'display': 'none' });
+
+                //$("#form1").submit();
+
+            });
+
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radiozimmer1").on("click", function () {
+
+                $("#zimmer").val("     Zimmer");
+                $("#zimmerShowDiv").css({ 'display': 'none' });
+
+
+            });
+
+
+            //smart
+            $("#radiozimmer1-smart").on("click", function () {
+
+                $("#zimmer-smart").val("Zimmer");
+                $("#zimmerShowDiv-smart").css({ 'display': 'none' });
+
+
+
+            });
+
+
+
+
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radiozimmer2").on("click", function () {
+
+                $("#zimmer").val("   ab 3 Zimmer");
+                $("#zimmerShowDiv").css({ 'display': 'none' });
+
+                //$("#form1").submit();
+
+            });
+
+
+            //smart
+            $("#radiozimmer2-smart").on("click", function () {
+
+                $("#zimmer-smart").val("   ab 3 Zimmer");
+                $("#zimmerShowDiv-smart").css({ 'display': 'none' });
+
+            });
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radiozimmer3").on("click", function () {
+
+                $("#zimmer").val("   ab 4 Zimmer");
+                $("#zimmerShowDiv").css({ 'display': 'none' });
+
+                //$("#form1").submit();
+
+            });
+
+
+
+            //smart
+            $("#radiozimmer3-smart").on("click", function () {
+
+                $("#zimmer-smart").val("   ab 4 Zimmer");
+                $("#zimmerShowDiv-smart").css({ 'display': 'none' });
+
+            });
+         
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radiozimmer4").on("click", function () {
+
+                $("#zimmer").val("   ab 5 Zimmer");
+                $("#zimmerShowDiv").css({ 'display': 'none' });
+
+
+            });
+
+
+            //smart
+            $("#radiozimmer4-smart").on("click", function () {
+
+                $("#zimmer-smart").val("   ab 5 Zimmer");
+                $("#zimmerShowDiv-smart").css({ 'display': 'none' });
+
+            });
+         
+
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radiozimmer5").on("click", function () {
+
+                $("#zimmer").val("   ab 6 Zimmer");
+                $("#zimmerShowDiv").css({ 'display': 'none' });
+
+
+
+            });
+
+            //smart
+            $("#radiozimmer5-smart").on("click", function () {
+
+                $("#zimmer-smart").val("   ab 6 Zimmer");
+                $("#zimmerShowDiv-smart").css({ 'display': 'none' });
+
+            });
+
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radiozimmer6").on("click", function () {
+
+
+                $("#zimmer").val("   ab 7 Zimmer");
+                $("#zimmerShowDiv").css({ 'display': 'none' });
+
+            });
+
+
+            //smart
+            $("#radiozimmer6-smart").on("click", function () {
+
+                $("#zimmer-smart").val("   ab 7 Zimmer");
+                $("#zimmerShowDiv-smart").css({ 'display': 'none' });
+
+            });
+
+
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radiozimmer7").on("click", function () {
+
+                $("#zimmer").val("   ab 8 Zimmer");
+                $("#zimmerShowDiv").css({ 'display': 'none' });
+
+                //$("#form1").submit();
+
+            });
+
+
+            //smart
+            $("#radiozimmer7-smart").on("click", function () {
+
+                $("#zimmer-smart").val("   ab 8 Zimmer");
+                $("#zimmerShowDiv-smart").css({ 'display': 'none' });
+
+            });
+
+
+
+            ///////////---radio-tablet---////////////////////////////////////////////////
+
+            $("#radio1-tablet").bind("click", function () {
+
+                //var _val = $("#dialogDivSection3Btn1-p1").val();
+                $("#dialogDivSection3Btn1-p1-tablet").val("Wohnung mieten");
+
+                $("#dialogDivSection3Btn1Show-tablet").css({ 'display': 'none' });
+
+            });
+
+
+
+
+            $("#radio2-tablet").bind("click", function () {
+
+
+
+                var _val = $("#dialogDivSection3Btn1-p2-tablet").val();
+                $("#dialogDivSection3Btn1-p1-tablet").val(_val);
+
+                $("#dialogDivSection3Btn1Show-tablet").css({ 'display': 'none' });
+
+            });
+
+
+            $("#radio3-tablet").bind("click", function () {
+
+
+
+                var _val = $("#dialogDivSection3Btn1-p3-tablet").val();
+                $("#dialogDivSection3Btn1-p1-tablet").val(_val);
+
+                $("#dialogDivSection3Btn1Show-tablet").css({ 'display': 'none' });
+
+            });
+
+
+            $("#radio4-tablet").bind("click", function () {
+
+
+
+                var _val = $("#dialogDivSection3Btn1-p4-tablet").val();
+                $("#dialogDivSection3Btn1-p1-tablet").val(_val);
+
+                $("#dialogDivSection3Btn1Show-tablet").css({ 'display': 'none' });
+
+            });
+
+
+            $("#radio5-tablet").bind("click", function () {
+
+
+
+                var _val = $("#dialogDivSection3Btn1-p5-tablet").val();
+                $("#dialogDivSection3Btn1-p1-tablet").val(_val);
+
+                $("#dialogDivSection3Btn1Show-tablet").css({ 'display': 'none' });
+
+            });
+
+
+
+            $("#radio6-tablet").bind("click", function () {
+
+
+
+                var _val = $("#dialogDivSection3Btn1-p6-tablet").val();
+                $("#dialogDivSection3Btn1-p1-tablet").val(_val);
+
+                $("#dialogDivSection3Btn1Show-tablet").css({ 'display': 'none' });
+
+            });
+
+
+            $("#radio7-tablet").bind("click", function () {
+
+
+
+                var _val = $("#dialogDivSection3Btn1-p7-tablet").val();
+                $("#dialogDivSection3Btn1-p1-tablet").val(_val);
+
+                $("#dialogDivSection3Btn1Show-tablet").css({ 'display': 'none' });
+
+            });
+
+
+            ////////
+
+
+            $("#radio8-tablet").bind("click", function () {
+
+
+                var _val = $("#dialogDivSection3Btn1-p8-tablet").val();
+                $("#dialogDivSection3Btn1-p1-tablet").val(_val);
+
+                $("#dialogDivSection3Btn1Show-tablet").css({ 'display': 'none' });
+
+            });
+
+
+            $("#radio9-tablet").bind("click", function () {
+
+
+
+                var _val = $("#dialogDivSection3Btn1-p9-tablet").val();
+                $("#dialogDivSection3Btn1-p1-tablet").val(_val);
+
+                $("#dialogDivSection3Btn1Show-tablet").css({ 'display': 'none' });
+
+            });
+
+
+            $("#radio10-tablet").bind("click", function () {
+
+
+                var _val = $("#dialogDivSection3Btn1-p10-tablet").val();
+                $("#dialogDivSection3Btn1-p1-tablet").val(_val);
+
+                $("#dialogDivSection3Btn1Show-tablet").css({ 'display': 'none' });
+
+            });
+
+
+
+            $("#radio11-tablet").bind("click", function () {
+
+
+                var _val = $("#dialogDivSection3Btn1-p11-tablet").val();
+                $("#dialogDivSection3Btn1-p1-tablet").val(_val);
+
+                $("#dialogDivSection3Btn1Show-tablet").css({ 'display': 'none' });
+
+            });
+
+
+
+            $("#radio12-tablet").bind("click", function () {
+
+
+                var _val = $("#dialogDivSection3Btn1-p12-tablet").val();
+                $("#dialogDivSection3Btn1-p1-tablet").val(_val);
+
+                $("#dialogDivSection3Btn1Show-tablet").css({ 'display': 'none' });
+
+            });
+
+
+
+            $("#radio13-tablet").bind("click", function () {
+
+
+                var _val = $("#dialogDivSection3Btn1-p13-tablet").val();
+                $("#dialogDivSection3Btn1-p1-tablet").val(_val);
+
+                $("#dialogDivSection3Btn1Show-tablet").css({ 'display': 'none' });
+
+            });
+
+
+
+            $("#radio14-tablet").bind("click", function () {
+
+
+                var _val = $("#dialogDivSection3Btn1-p14-tablet").val();
+                $("#dialogDivSection3Btn1-p1-tablet").val(_val);
+
+                $("#dialogDivSection3Btn1Show-tablet").css({ 'display': 'none' });
+
+            });
+
+
+
+            $("#radio15-tablet").bind("click", function () {
+
+
+                var _val = $("#dialogDivSection3Btn1-p15-tablet").val();
+                $("#dialogDivSection3Btn1-p1-tablet").val(_val);
+
+                $("#dialogDivSection3Btn1Show-tablet").css({ 'display': 'none' });
+
+            });
+
+
+
+
+
+
+            //////////------------------------------------------------------------
+
+
+
+            /////////////
+            $("#wohnflaeche-tablet").bind("mouseover", function () {
+
+                $(this).css({ 'background-color': 'white' });
+                $(this).css({ 'border': '1px solid gray' });
+
+            });
+
+
+            $("#wohnflaeche-tablet").bind("mouseleave", function () {
+
+                $(this).css({ 'background-color': 'rgba(255,255,255,0)' });
+                $(this).css({ 'border': 'none' });
+
+
+            });
+
+
+            $("#zimmer-tablet").bind("mouseover", function () {
+
+                $(this).css({ 'background-color': 'white' });
+                $(this).css({ 'border': '1px solid gray' });
+
+            });
+
+
+            $("#zimmer-tablet").bind("mouseleave", function () {
+
+                $(this).css({ 'background-color': 'rgba(255,255,255,0)' });
+                $(this).css({ 'border': 'none' });
+
+
+            });
+
+
+
+            $("#mietpreis-tablet").bind("mouseover", function () {
+
+                $(this).css({ 'background-color': 'white' });
+                $(this).css({ 'border': '1px solid gray' });
+
+            });
+
+
+            $("#mietpreis-tablet").bind("mouseleave", function () {
+
+                $(this).css({ 'background-color': 'rgba(255,255,255,0)' });
+                $(this).css({ 'border': 'none' });
+
+
+            });
+
+
+
+            /////////////////////radioMietpreis////////////////////////
+
+
+            $("#radioMietpreis1-tablet").on("click", function () {
+
+
+                $("#mietpreis-tablet").val("   Mietpreis");
+                $("#mietpreisDiv-tablet").hide()
+
+            });
+
+
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radioMietpreis2-tablet").on("click", function () {
+                $("#mietpreis-tablet").val("   bis 300 €");
+                $("#mietpreisDiv-tablet").hide();
+
+                //$("#form1").submit();
+
+
+            });
+
+
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radioMietpreis3-tablet").on("click", function () {
+
+                $("#mietpreis-tablet").val("   bis 400 €");
+                $("#mietpreisDiv-tablet").hide();
+
+
+
+            });
+
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radioMietpreis4-tablet").on("click", function () {
+
+                $("#mietpreis-tablet").val("   bis 500 €");
+                $("#mietpreisDiv-tablet").hide();
+
+
+            });
+
+
+
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radioMietpreis5-tablet").on("click", function () {
+
+                $("#mietpreis-tablet").val("   bis 600 €");
+                $("#mietpreisDiv-tablet").hide();
+
+
+            });
+
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radioMietpreis6-tablet").on("click", function () {
+
+                $("#mietpreis-tablet").val("   bis 700 €");
+                $("#mietpreisDiv-tablet").hide();
+
+
+
+            });
+
+
+
+
+
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radioMietpreis7-tablet").on("click", function () {
+
+                $("#mietpreis-tablet").val("   bis 800 €");
+                $("#mietpreisDiv-tablet").hide();
+
+
+            });
+
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radioWohnflaeche1-tablet").on("click", function () {
+
+                $("#wohnflaeche-tablet").val("   Wohnflaeche");
+                $("#wohnflaecheShowDiv-tablet").css({ 'display': 'none' });
+
+            });
+
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radioWohnflaeche2-tablet").on("click", function () {
+
+                $("#wohnflaeche-tablet").val("   ab 40 qm²");
+                $("#wohnflaecheShowDiv-tablet").css({ 'display': 'none' });
+
+
+            });
+
+
+
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radioWohnflaeche3-tablet").on("click", function () {
+
+                $("#wohnflaeche-tablet").val("   ab 60 qm²");
+                $("#wohnflaecheShowDiv-tablet").css({ 'display': 'none' });
+
+
+            });
+
+
+
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radioWohnflaeche4-tablet").on("click", function () {
+
+
+                $("#wohnflaeche-tablet").val("   ab 80 qm²");
+                $("#wohnflaecheShowDiv-tablet").css({ 'display': 'none' });
+
+            });
+
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radioWohnflaeche5-tablet").on("click", function () {
+
+                $("#wohnflaeche-tablet").val("   ab 100 qm²");
+                $("#wohnflaecheShowDiv-tablet").css({ 'display': 'none' });
+
+
+            });
+
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radioWohnflaeche6-tablet").on("click", function () {
+
+
+                $("#wohnflaeche-tablet").val("   ab 120 qm²");
+                $("#wohnflaecheShowDiv-tablet").css({ 'display': 'none' });
+
+
+            });
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radioWohnflaeche7-tablet").on("click", function () {
+
+                $("#wohnflaeche-tablet").val("   ab 140 qm²");
+                $("#wohnflaecheShowDiv-tablet").css({ 'display': 'none' });
+
+
+            });
+
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radiozimmer1-tablet").on("click", function () {
+
+                $("#zimmer-tablet").val("     Zimmer");
+                $("#zimmerShowDiv-tablet").css({ 'display': 'none' });
+
+
+            });
+
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radiozimmer2-tablet").on("click", function () {
+
+                $("#zimmer-tablet").val("   ab 3 Zimmer");
+                $("#zimmerShowDiv-tablet").css({ 'display': 'none' });
+
+
+            });
+
+
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radiozimmer3-tablet").on("click", function () {
+
+                $("#zimmer-tablet").val("   ab 4 Zimmer");
+                $("#zimmerShowDiv-tablet").css({ 'display': 'none' });
+
+
+            });
+
+
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radiozimmer4-tablet").on("click", function () {
+
+                $("#zimmer-tablet").val("   ab 5 Zimmer");
+                $("#zimmerShowDiv-tablet").css({ 'display': 'none' });
+
+
+            });
+
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radiozimmer5-tablet").on("click", function () {
+
+                $("#zimmer-tablet").val("   ab 6 Zimmer");
+                $("#zimmerShowDiv-tablet").css({ 'display': 'none' });
+
+
+            });
+
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radiozimmer6-tablet").on("click", function () {
+
+
+                $("#zimmer-tablet").val("   ab 7 Zimmer");
+                $("#zimmerShowDiv-tablet").css({ 'display': 'none' });
+
+
+            });
+
+
+
+            /////////////////////////////////////////////////////////////////change radio 
+
+            $("#radiozimmer7").on("click", function () {
+
+                $("#zimmer").val("   ab 8 Zimmer");
+                $("#zimmerShowDiv").css({ 'display': 'none' });
+
+
+            });
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+            /////////window/////dialogDivSection3Btn1Flag == true/////
+            $(document).click(function () {
+
+                if ($("#dialogDivSection3Btn1Show").attr('display')=="block") {
+
+                    alert();
+                    //$("#dialogDivSection3Btn1Show").css({ 'display': 'none' });
+                }
+
+            });
+            ////////////////////////////dialogDivSection3Btn////////////////////////////////////
+
+
+            var dialogDivSection3Btn1Flag = false;
+            $("#dialogDivSection3Btn1-p1, #i-wohnung").bind("click", function (event) {
+
+                if (dialogDivSection3Btn1Flag == false) {
+
+
+                    $("#mietpreisDiv").css({ 'display': 'none' });
+                    $("#wohnflaecheShowDiv").css({ 'display': 'none' });
+                    $("#zimmerShowDiv").css({ 'display': 'none' });
+
+                    $("#dialogDivSection3Btn1Show").css({ 'display': 'block' });
+                    dialogDivSection3Btn1Flag = true;
+
+                }
+                else {
+
+
+                    dialogDivSection3Btn1Flag = false;
+                    $("#dialogDivSection3Btn1Show").css({ 'display': 'none' });
+
+                }
+            });
+
+
+
+              ////////////////////////////dialogDivSection3Btn-p1-tablet////////////////////////////////////
+            var dialogDivSection3Btn1TabletFlag = false;
+            $("#dialogDivSection3Btn1-p1-tablet, #i-wohnung-tablet").bind("click", function (event) {
+
+                if (dialogDivSection3Btn1TabletFlag == false) {
+
+
+                    $("#mietpreisDiv-tablet").css({ 'display': 'none' });
+                    $("#wohnflaecheShowDiv-tablet").css({ 'display': 'none' });
+                    $("#zimmerShowDiv-tablet").css({ 'display': 'none' });
+
+                    $("#dialogDivSection3Btn1Show-tablet").css({ 'display': 'block' });
+                    dialogDivSection3Btn1TabletFlag = true;
+
+                }
+                else {
+
+
+                    dialogDivSection3Btn1TabletFlag = false;
+                    $("#dialogDivSection3Btn1Show-tablet").css({ 'display': 'none' });
+
+                }
+            });
+
+
+
+
+            //Mietpreis click
+            var mietpreisFlag = false;
+            $("#mietpreis, #i-mietpreis").bind("click", function () {
+
+                if (mietpreisFlag == false) {
+
+                    mietpreisFlag = true;
+
+                    $("#wohnflaecheShowDiv").css({ 'display': 'none' });
+                    $("#zimmerShowDiv").css({ 'display': 'none' });
+
+                    $("#mietpreisDiv").css({ 'display': 'block' });
+
+
+
+                }
+                else {
+                    mietpreisFlag = false;
+                    $("#mietpreisDiv").css({ 'display': 'none' });
+
+                }
+            });
+
+
+            //Mietpreis-tablet click
+            var mietpreisTabletFlag = false;
+            $("#mietpreis-tablet, #i-mietpreis-tablet").bind("click", function () {
+
+                if (mietpreisTabletFlag == false) {
+
+                    mietpreisTabletFlag = true;
+
+                    $("#wohnflaecheShowDiv-tablet").css({ 'display': 'none' });
+                    $("#zimmerShowDiv-tablet").css({ 'display': 'none' });
+
+                    $("#mietpreisDiv-tablet").css({ 'display': 'block' });
+
+
+
+                }
+                else {
+                    mietpreisTabletFlag = false;
+                    $("#mietpreisDiv-tablet").css({ 'display': 'none' });
+
+                }
+            });
+
+
+
+            //Wohnflaeche click
+            var wohnflaecheFlag = false;
+            $("#wohnflaeche, #i-wohnflaeche").bind("click", function () {
+
+                if (wohnflaecheFlag == false) {
+
+                    wohnflaecheFlag = true;
+
+                    $("#mietpreisDiv").css({ 'display': 'none' });
+                    $("#zimmerShowDiv").css({ 'display': 'none' });
+
+                    $("#wohnflaecheShowDiv").css({ 'display': 'block' });
+
+                }
+                else {
+
+                    $("#wohnflaecheShowDiv").css({ 'display': 'none' });
+                    wohnflaecheFlag = false;
+                }
+
+
+            });
+
+
+            //Wohnflaeche-tablet click
+            var wohnflaecheTabletFlag = false;
+            $("#wohnflaeche-tablet, #i-wohnflaeche-tablet").bind("click", function () {
+
+                if (wohnflaecheTabletFlag == false) {
+
+                    wohnflaecheTabletFlag = true;
+
+                    $("#mietpreisDiv-tablet").css({ 'display': 'none' });
+                    $("#zimmerShowDiv-tablet").css({ 'display': 'none' });
+
+                    $("#wohnflaecheShowDiv-tablet").css({ 'display': 'block' });
+
+                }
+                else {
+
+                    $("#wohnflaecheShowDiv-tablet").css({ 'display': 'none' });
+                    wohnflaecheTabletFlag = false;
+                }
+
+
+            });
+
+
+            var zimmerFlag = false;
+            $("#zimmer, #i-zimmer").bind("click", function () {
+
+                if (zimmerFlag == false) {
+
+                    zimmerFlag = true;
+
+                    $("#mietpreisDiv").css({ 'display': 'none' });
+                    $("#wohnflaecheShowDiv").css({ 'display': 'none' });
+
+                    $("#zimmerShowDiv").css({ 'display': 'block' });
+
+                }
+                else {
+                    zimmerFlag = false;
+                    $("#zimmerShowDiv").css({ 'display': 'none' });
+
+                }
+
+
+            });
+
+
+
+
+            var zimmerTabletFlag = false;
+            $("#zimmer-tablet, #i-zimmer-tablet").bind("click", function () {
+
+                if (zimmerTabletFlag == false) {
+
+                    zimmerTabletFlag = true;
+
+                    $("#mietpreisDiv-tablet").css({ 'display': 'none' });
+                    $("#wohnflaecheShowDiv-tablet").css({ 'display': 'none' });
+
+                    $("#zimmerShowDiv-tablet").css({ 'display': 'block' });
+
+                }
+                else {
+                    zimmerTabletFlag = false;
+                    $("#zimmerShowDiv-tablet").css({ 'display': 'none' });
+
+                }
+
+
+            });
+
+
+
+
+
+
+
+        });  // end of jquery
+
+    ///////////////////////////////////////////////// ANGULAR /////////////////////////////////////////////////
+        var app = angular.module("firstApp", ["ngMaterial", "ngRoute"]);
+
+        app.controller("alertCtrl", function ($scope, $timeout) {
+
+
+            $scope.show1functionMouseover = function () {
+
+                $timeout(function () {
+
+                    angular.element(document.getElementById("show1").style.display = "block");
+
+                }, 200)
+
+            }
+
+            $scope.show1functionMouseleave = function () {
+
+                $timeout(function () {
+
+                    angular.element(document.getElementById("show1").style.display = "none");
+
+                }, 200)
+            }
+
+
+            $scope.show2functionMouseover = function () {
+
+                $timeout(function () {
+
+                    angular.element(document.getElementById("show2").style.display = "block");
+
+                }, 300);
+
+
+            }
+
+
+            $scope.show2functionMouseleave = function () {
+
+                angular.element(document.getElementById("show2").style.display = "none");
+
+
+            }
+
+
+            $scope.show2Mouseover = function () {
+
+                angular.element(document.getElementById("show2").style.display = "block");
+
+            }
+
+
+
+            $scope.show3functionMouseover = function () {
+
+                $timeout(function () {
+
+                    angular.element(document.getElementById("show3").style.display = "block");
+
+                }, 300);
+
+            }
+
+            $scope.show3functionMouseleave = function () {
+
+                $timeout(function () {
+
+                    angular.element(document.getElementById("show3").style.display = "none");
+
+                }, 300);
+            }
+
+
+            $scope.show4functionMouseover = function () {
+
+                $timeout(function () {
+
+                    angular.element(document.getElementById("show4").style.display = "block");
+
+                }, 300);
+
+            }
+
+            $scope.show4functionMouseleave = function () {
+
+                $timeout(function () {
+
+                    angular.element(document.getElementById("show4").style.display = "none");
+
+                }, 300);
+            }
+
+
+            $scope.show5functionMouseover = function () {
+
+                $timeout(function () {
+
+                    angular.element(document.getElementById("show5").style.display = "block");
+
+                }, 300);
+
+            }
+
+            $scope.show5functionMouseleave = function () {
+
+                $timeout(function () {
+
+                    angular.element(document.getElementById("show5").style.display = "none");
+
+                }, 300);
+            }
+
+
+            $scope.show6functionMouseover = function () {
+
+                $timeout(function () {
+
+                    angular.element(document.getElementById("show6").style.display = "block");
+
+                }, 300);
+
+            }
+
+            $scope.show6functionMouseleave = function () {
+
+                $timeout(function () {
+
+                    angular.element(document.getElementById("show6").style.display = "none");
+
+                }, 300);
+            }
+
+
+            $scope.show7functionMouseover = function () {
+
+                $timeout(function () {
+
+                    angular.element(document.getElementById("show7").style.display = "block");
+
+                }, 300);
+
+            }
+
+            $scope.show7functionMouseleave = function () {
+
+                $timeout(function () {
+
+                    angular.element(document.getElementById("show7").style.display = "none");
+
+                }, 300);
+            }
+
+
+            //$scope.dialogButtonDivFlag = false;
+
+            //$scope.dialogDivSection3Btn1Function = function () {
+
+            //    if ($scope.dialogButtonDivFlag == false) {
+
+            //        $scope.dialogButtonDivFlag = true;
+            //        angular.element(document.getElementById("dialogDivSection3Btn1Show").style.display = "block");
+
+            //    }
+            //    else {
+            //        $scope.dialogButtonDivFlag = false;
+            //        angular.element(document.getElementById("dialogDivSection3Btn1Show").style.display = "none");
+
+            //    }
+
+            //}
+
+
+
+
+            //custom directive
+            app.directive("bgDirective", function () {
+                return {
+
+                    template:'<h1>Some Directive </h1>',
+
+                    link: function (scope, element, attr) {
+                        element.on("mouseover", function () {
+                            element.css({
+                                'background-color': '#f6f5f4'
+                            });
+
+                        });
+
+                        element.on("mouseleave", function () {
+                            element.css({
+                                'background-color': '#667777'
+                            });
+
+                        });
+
+                    }
+                }
+
+
+            })
+
+            /////////////////////////
+
+
+
+
+        });  // end of angular controller alertCtrl
+
+    </script>  
+
+<!--=========================================================================-->
+
+
+</head>
+
+
+
+<body id="body1">
+
+@model List<timmoweltNew3.Models.Haeuser>
+
+
+    <!--MessageBox-->
+    @*<div id="messageBox" ng-controller="alertCtrl" style="width:350px; height:100px; right:30px; top:200px; border-radius:15px;  position:absolute; z-index:999999999;  box-shadow:5px 7px 3px white; background-color:#f88d8d">
+       
+        <p style="margin-left:20px; margin-top:35px;">
+            This Page is stil under construction
+            <span><md-button id="messageClose" class="md-raised md-primary">X Close</md-button></span>
+        </p>
+
+        <img src="~/Images/under-construction2.gif" style="position:absolute; left:20px; top:7px; width:40px; height:auto"  />
+    </div>*@
+
+
+
+    <div id="smart-menu-showDiv" style=" position:absolute; z-index:99999999999999999; display:none;  left:0px; top:0px; width:300px; height:800px; background-color:#222222">
+
+        <article style="width:100%; height:45px; background-color:#565555; ">
+
+            <md-button id="smart-menu-showDiv-close-btn1" class="" style="width:150px; height:35px; margin-left:160px; margin-top:10px; color:#fff">X Close</md-button>
+            
+        </article>
+
+
+
+        <article>
+
+            <ul class="smart-menu-showDiv-ul">
+                <li><a href="#">Wohnung</a></li>
+      
+                <li><a href="#">Gewerbe</a> </li>               
+               
+                <li><a href="#" style="color:orange"> Ausland</a>               
+                    <ul id="smart-menu-showDiv-sub1-ul" style="display:none;">
+                        <li><a href="#">Haus</a></li>
+                        <li><a href="#">Immobilien</a></li>
+                        <li><a href="#">Kontakt</a></li>
+                    </ul>                
+                </li>
+
+                <li><a href="#">Wohnung</a>
+                    <ul id="smart-menu-showDiv-sub2-ul">
+                        <li><a href="#">Haus</a></li>
+                        <li><a href="#">Immobilien</a></li>
+                        <li><a href="#">Kontakt</a></li>
+                        <li><a href="#">Immobilien</a></li>
+                        <li><a href="#">Kontakt</a></li>
+                    </ul>   
+                </li>
+
+                <li><a href="#">Gewerbe</a></li>
+                <li><a href="#">Ausland</a></li>
+                <li><a href="#">Anbieten</a></li>
+                <li><a href="#">Baufinazierung</a></li>
+                <li><a href="#">Markt & Preise</a></li>
+                <li><a href="#">Umzug</a></li>
+            </ul>
+
+        </article>
+
+     
+
+      
+
+        <style type="text/css">
+           
+            .smart-menu-showDiv-ul {
+            margin:0px 10px;
+
+            }
+
+            /*.smart-menu-showDiv-ul > li:nth-child(3):hover + #smart-menu-showDiv-sub1-ul {
+                display: block ;
+            }*/
+
+                .smart-menu-showDiv-ul > li {
+                    list-style: none;
+                    width: 230px;
+                    line-height:50px;
+                    border-bottom:1px solid #312f2f;
+             
+                }
+
+                    .smart-menu-showDiv-ul > li:nth-child(3) > a:hover {
+
+                       background-color:blue;
+                       font-size:1.3em;
+                    
+                    }
+
+
+
+                    .smart-menu-showDiv-ul > li > a {
+                        color: white;
+                        font-size: 1.1em;
+                        
+                       
+                    }
+
+                        .smart-menu-showDiv-ul > li > a:hover {
+                            text-decoration: none;
+                            display: table-cell;
+                            width:230px;
+                            background-color:#ffb200;
+                            transition:all 0.2s ease;
+                            color: blue;
+                          
+                        }
+
+
+            #smart-menu-showDiv-sub2-ul {
+            
+                display:none;
+            }
+
+              
+
+            #smart-menu-showDiv-sub1-ul > li {
+                list-style: none;
+                
+            }
+
+                #smart-menu-showDiv-sub1-ul > li > a {
+                    text-decoration: none;
+
+                }
+
+        </style>
+
+
+    </div>
+
+  
+
+    <figure>
+        <img id="stern" src="/Images/stern2.png" style="position:absolute;  z-index:99999999;  width:50px; height:50px; top:95px; left:90px;" />
+    </figure>
+
+        <header ng-controller="alertCtrl">
+
+            <!--linke-schräge-->
+            <div id="linke-schräge">
+                <h4 style="color:white; margin-left:70px; margin-top:5px;"> <a href="#" style="color:white; outline:hidden; text-decoration:none;">Immer zu</a> </h4>
+            </div>
+
+            <figure style=" position:relative; z-index:9999; width:250px; height:100px; margin:0 auto; ">
+                <img src="~/Images/immo2.png" width="250" height="100" style="margin-top:10px" />
+            </figure>
+
+            <!--rechte-schräge-->
+            <div id="rechte-schräge">
+                <h4 style="color:white; margin-left:140px; margin-top:6px;"><a href="#" style="color:white; outline:hidden; text-decoration:none;"> Timmo Welt </a> </h4>
+            </div>
+
+        </header>
+
+
+
+
+
+        <!--laptop menu-->
+        <!--------------haeader menu absolute item container---------------->
+
+
+        <nav id="menu-nav-laptop">
+
+            <!--2.row--------------------------------------------------------------->
+            <div id="header-menu-background">
+                <div id="header-menu">
+
+
+                    <ul id="header-menu-ul">
+                        <li style="border-left:1px solid white;">
+
+                            <!--show1-->
+                            <div id="show1" style="position:absolute; display:none; z-index:9999999999;  box-shadow:0px 5px 6px #000;  width:943px; height:400px; background-color:#fbfbfb; left:117px; top:60px;">
+
+                                <div style="float:left">
+                                    <ul class="show1-ul">
+                                        <li> <a style=" font-weight:bold; font-size:1.2em" href="#">Immobilien suchen</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Wohnung mieten</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Haus kaufen</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Grundstück kaufen</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Neubauprojekte</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Renditeobjekte</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Geldanlagen</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Zwangsversteigerungen</a></li>
+                                    </ul>
+                                </div>
+
+
+                                <div style="float:left">
+                                    <ul class="show1-ul">
+                                        <li> <a style=" font-weight:bold; font-size:1.2em" href="#">Haus bauen</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Wohnung mieten</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Fertig-& Typenhäuser</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Musterhäuser</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Musterhauspark</a></li>
+                                    </ul>
+
+                                </div>
+
+                                <div style="float:left">
+                                    <ul class="show1-ul">
+                                        <li> <a style=" font-weight:bold; font-size:1.2em" href="#">Suchanzeige</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Wohnung mieten</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Käufer finden</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Mieter finden</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Suchanzeien aufgebn</a></li>
+                                    </ul>
+
+                                </div>
+
+
+                                <div style="float:left">
+                                    <ul class="show1-ul">
+                                        <li> <a style=" font-weight:bold; font-size:1.2em" href="#">Ratgeber</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Wohnung mieten</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Bauen & Kaufen</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Einrichten</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Recht</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Wohnen & leben </a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#"> Gigaset Alarmsysteme </a></li>
+                                        <li>  <a href="#" style="font-size:1.4em; color:#fc6969">GIGASET</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Tipps Miete/Kauf</a></li>
+                                    </ul>
+
+                                </div>
+
+                                <style type="text/css">
+                                    .show1-ul {
+                                        margin-top: 60px;
+                                    }
+
+                                        .show1-ul > li {
+                                            list-style: none;
+                                            line-height: 35px;
+                                        }
+
+                                            .show1-ul > li > a {
+                                                color: #000;
+                                                font-size: 16px;
+                                                text-decoration: none;
+                                            }
+
+                                                .show1-ul > li > a:hover {
+                                                    color: #fc6969;
+                                                }
+                                </style>
+
+
+                            </div> <!--end of show1-->
+
+
+                            <div id="timmo-logo1">
+                                <a href="#"><span style="margin-left:30px; font-weight:bold; font-size:1.1em "> </span></a>
+
+                                <div id="container" ng-controller="alertCtrl"
+                                     ng-model="flag"
+                                     ng-mouseover="flag=true"
+                                     ng-mouseleave="flag=false" style="cursor:pointer;">
+
+                                    <div id="timmo-logo" style="margin-left:15px; margin-top:2px;" ng-style="flag===true ? { 'top':'-100px', 'transition':'all .5s'}: { 'top':'5px' , 'transition':'all .6s'  }">
+                                        <img src="/Images/house5.png" width="30" height="30" />
+                                    </div>
+
+
+
+                                    <div id="timmo-logo2" style="margin-left:15px; margin-top:2px;" ng-style="flag===true ? { 'top':'0px', 'transition':'all .5s' }: { 'top':'100px','transition':'all .6s'  }">
+                                        <img src="/Images/house3.png" width="30" height="30" />
+
+                                    </div>
+
+
+                                    <!--show1DivMask-->
+                                    <div id="show1DivMaske" style=" position:absolute; transform:skew(-1deg);   width:132px; height:70px; z-index:999999999; top:3px; left:1px; ">
+
+                                    </div>
+
+                                    <div ng-controller="alertCtrl" id="p1" ng-style="flag===true ? { 'top':'0px', 'transition':'all .3s', 'display':'block' }: { 'top':'100px','transition':'all .3s'  }" style="color:#fff;font-weight:bold; display:none;  margin-left:20px; margin-top:24px">
+                                        Wohnen
+                                    </div>
+
+
+
+
+                                </div>
+                            </div>
+
+
+                        </li>
+
+                        <li>
+                            <!--show2-->
+                            <div id="show2" style="position:absolute; display:none; z-index:999999999; box-shadow:3px 3px 0px gray; width:808px; height:350px; background-color:#fbfbfb; left:102px; top:60px;">
+
+
+                                <div style="float:left">
+                                    <ul class="show1-ul">
+                                        <li> <a style=" font-weight:bold; font-size:1.2em" href="#">Immobilien suchen</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Büro/Praxis</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Ladenflächen</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Hallen</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Gastronomie</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Land-/Forstwirtschaft</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Zwangsversteigerungen</a></li>
+                                    </ul>
+                                </div>
+
+
+                                <div style="float:left">
+                                    <ul class="show1-ul">
+                                        <li> <a style=" font-weight:bold; font-size:1.2em" href="#">Ratgeber</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Recht</a></li>
+
+                                    </ul>
+
+                                </div>
+
+
+                                <div style="float:left">
+                                    <ul class="show1-ul">
+                                        <li> <a style=" font-weight:bold; font-size:1.2em" href="#">Suchanzeiger</a></li>
+                                        <li>
+                                            <p style="line-height:10px; margin-top:10px;"> Veröffentlichen Sie Ihre  </p>
+                                            <p style="line-height:10px;">Immobilienwünsche und erhalten</p>
+                                            <p style="line-height:10px;"> Sie persönliche Angebote von Eigentümern und Maklern</p>
+                                        </li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Suche aufgeben</a></li>
+                                    </ul>
+
+                                </div>
+
+
+                            </div>
+
+                            <!--show2DivMask-->
+                            <div id="show2DivMaske" style=" position:absolute; border:1px solid green; transform:skew(-1deg);  width:132px; height:70px; z-index:999999999; top:3px; left:1px; ">
+
+                            </div>
+
+                            <div id="show2Div">
+                                <a href="#"><span style="margin-left:25px;  font-weight:bold; font-size:1.1em" class="glyphicon glyphicon-knight"> Gewerbe</span></a>
+                            </div>
+                        </li>
+
+                        <li>
+
+                            <!--show3-->
+                            <div id="show3" style="position:absolute; display:none; z-index:999999999;box-shadow:3px 3px 0px gray; width:948px; height:345px; background-color:#fbfbfb; left:-172px; top:59px;">
+
+                                <div style="float:left">
+                                    <ul class="show1-ul">
+                                        <li> <a style=" font-weight:bold; font-size:1.2em" href="#">Immobilien suchen</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Österreich</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Spanien</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Italien</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Frnakreich</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Kroatien</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Weitere Länder</a></li>
+                                    </ul>
+                                </div>
+
+
+                                <div style="float:left">
+                                    <ul class="show1-ul">
+                                        <li> <a style=" font-weight:bold; font-size:1.2em" href="#">Ratgeber</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Immobilien Eigentum im Ausland</a></li>
+
+                                    </ul>
+
+                                </div>
+
+
+                                <div style="float:left">
+                                    <ul class="show1-ul">
+                                        <li> <a style=" font-weight:bold; font-size:1.2em" href="#">Suchanzeiger</a></li>
+                                        <li>
+                                            <p style="line-height:10px; margin-top:10px;"> Veröffentlichen Sie Ihre  </p>
+                                            <p style="line-height:10px;">Immobilienwünsche und erhalten</p>
+                                            <p style="line-height:10px;"> Sie persönliche Angebote von Eigentümern und Maklern</p>
+                                        </li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Suche aufgeben</a></li>
+                                    </ul>
+
+                                </div>
+
+                            </div>
+
+                            <!--show3DivMask-->
+                            <div id="show3DivMaske" style=" position:absolute; transform:skew(-1deg);  border:1px solid green;  width:132px; height:70px; z-index:999999999; top:3px; left:1px; ">
+
+                            </div>
+
+                            <div>
+                                <a href="#"><span style="margin-left:45px;">Ausland</span></a>
+                            </div>
+                        </li>
+
+                        <li>
+
+
+                            <!--show4-->
+                            <div id="show4" style="position:absolute; display:none; z-index:999999999;box-shadow:3px 3px 0px gray; width:948px; height:345px; background-color:#fbfbfb; left:-172px; top:60px;">
+
+                                <div style="float:left">
+                                    <ul class="show1-ul">
+                                        <li> <a style=" font-weight:bold; font-size:1.2em" href="#">Immobilien suchen</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Österreich</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Spanien</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Italien</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Frnakreich</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Kroatien</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Weitere Länder</a></li>
+                                    </ul>
+                                </div>
+
+
+                                <div style="float:left">
+                                    <ul class="show1-ul">
+                                        <li> <a style=" font-weight:bold; font-size:1.2em" href="#">360° Ansicht</a></li>
+                                        <li><a><img src="~/Images/pic_menu_360grad.png" /></a></li>
+
+                                    </ul>
+
+                                </div>
+
+
+                                <div style="float:left">
+                                    <ul class="show1-ul">
+                                        <li> <a style=" font-weight:bold; font-size:1.2em" href="#">Suchanzeiger</a></li>
+                                        <li>
+                                            <p style="line-height:10px; margin-top:10px;"> Veröffentlichen Sie Ihre  </p>
+                                            <p style="line-height:10px;">Immobilienwünsche und erhalten</p>
+                                            <p style="line-height:10px;"> Sie persönliche Angebote von Eigentümern und Maklern</p>
+                                        </li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Suche aufgeben</a></li>
+                                    </ul>
+
+                                </div>
+
+                            </div>
+
+                            <!--show4DivMask-->
+                            <div id="show4DivMaske" style=" position:absolute; transform:skew(-1deg);  width:132px; height:70px; z-index:999999999; top:3px; left:1px;">
+
+                            </div>
+
+
+                            <div ng-controller="alertCtrl" ng-mouseover="show4functionMouseover()" ng-mouseleave="show4functionMouseleave()">
+                                <a href="#"><span style="margin-left:30px;">Anbieten</span></a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <!--show5-->
+                            <div id="show5" style="position:absolute; display:none; z-index:999999999;box-shadow:3px 3px 0px gray; width:947px; height:345px; background-color:#fbfbfb; left:-442px; top:60px;">
+
+
+                                <div style="float:left">
+                                    <ul class="show1-ul">
+                                        <li> <a style=" font-weight:bold; font-size:1.2em" href="#">Immobilien suchen</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Wohnung mieten</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Haus kaufen</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Grundstück kaufen</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Neubauprojekte</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Renditeobjekte</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Geldanlagen</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Zwangsversteigerungen</a></li>
+                                    </ul>
+                                </div>
+
+
+                                <div style="float:left">
+                                    <ul class="show1-ul">
+                                        <li> <a style=" font-weight:bold; font-size:1.2em" href="#">Haus bauen</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Wohnung mieten</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Fertig-& Typenhäuser</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Musterhäuser</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Musterhauspark</a></li>
+                                    </ul>
+
+                                </div>
+
+                                <div style="float:left">
+                                    <ul class="show1-ul">
+                                        <li> <a style=" font-weight:bold; font-size:1.2em" href="#">Suchanzeige</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Wohnung mieten</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Käufer finden</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Mieter finden</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Suchanzeien aufgebn</a></li>
+                                    </ul>
+
+                                </div>
+
+
+                                <div style="float:left">
+                                    <ul class="show1-ul">
+                                        <li> <a style=" font-weight:bold; font-size:1.2em" href="#">Ratgeber</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Wohnung mieten</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Bauen & Kaufen</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Einrichten</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Recht</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Wohnen & leben </a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#"> Gigaset Alarmsysteme </a></li>
+                                        <li>  <a href="#" style="font-size:1.4em; color:#fc6969">GIGASET</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Tipps Miete/Kauf</a></li>
+                                    </ul>
+
+                                </div>
+
+                            </div>
+
+                            <!--show5DivMask-->
+                            <div id="show5DivMaske" style=" position:absolute; transform:skew(-1deg);  width:132px; height:70px; z-index:999999999; top:3px; left:1px;">
+
+                            </div>
+
+                            <div ng-controller="alertCtrl">
+                                <a href="#"><span style="margin-left:13px;">Baufinazierung</span></a>
+                            </div>
+                        </li>
+
+                        <li>
+
+                            <!--show6-->
+                            <div id="show6" style="position:absolute; display:none; z-index:999999999;box-shadow:3px 3px 0px gray; width:845px; height:345px; background-color:#fbfbfb; left:-376px; top:60px;">
+
+                                <div style="float:left">
+                                    <ul class="show1-ul">
+                                        <li> <a style=" font-weight:bold; font-size:1.2em" href="#">Immobilien suchen</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Österreich</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Spanien</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Italien</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Frnakreich</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Kroatien</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Weitere Länder</a></li>
+                                    </ul>
+                                </div>
+
+
+
+                                <div style="float:left">
+                                    <ul class="show1-ul">
+                                        <li> <a style=" font-weight:bold; font-size:1.2em" href="#">Suchanzeiger</a></li>
+                                        <li>
+                                            <p style="line-height:10px; margin-top:10px;"> Veröffentlichen Sie Ihre  </p>
+                                            <p style="line-height:10px;">Immobilienwünsche und erhalten</p>
+                                            <p style="line-height:10px;"> Sie persönliche Angebote von Eigentümern und Maklern</p>
+                                        </li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Suche aufgeben</a></li>
+                                    </ul>
+
+                                </div>
+
+                            </div>
+
+                            <!--show6DivMask-->
+                            <div id="show6DivMaske" style=" position:absolute; transform:skew(-1deg);  width:132px; height:70px; z-index:999999999; top:3px; left:1px;">
+
+                            </div>
+
+                            <div ng-controller="alertCtrl">
+                                <a href="#"><span style="margin-left:15px;">Markt & Preise</span></a>
+                            </div>
+                        </li>
+
+                        <li>
+
+                            <!--show7-->
+                            <div id="show7" style="position:absolute; display:none; z-index:999999999; box-shadow:3px 3px 0px gray; width:945px; height:345px; background-color:#fbfbfb; left:-576px; top:60px;">
+
+                                <div style="float:left">
+                                    <ul class="show1-ul">
+                                        <li> <a style=" font-weight:bold; font-size:1.2em" href="#">Immobilien suchen</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Österreich</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Spanien</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Italien</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Frnakreich</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Kroatien</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Weitere Länder</a></li>
+                                    </ul>
+                                </div>
+
+
+                                <div style="float:left">
+                                    <ul class="show1-ul">
+                                        <li> <a style=" font-weight:bold; font-size:1.2em" href="#">360° Ansicht</a></li>
+                                        <li><a><img src="~/Images/pic_menu_360grad.png" /></a></li>
+
+                                    </ul>
+
+                                </div>
+
+
+                                <div style="float:left">
+                                    <ul class="show1-ul">
+                                        <li> <a style=" font-weight:bold; font-size:1.2em" href="#">Suchanzeiger</a></li>
+                                        <li>
+                                            <p style="line-height:10px; margin-top:10px;"> Veröffentlichen Sie Ihre  </p>
+                                            <p style="line-height:10px;">Immobilienwünsche und erhalten</p>
+                                            <p style="line-height:10px;"> Sie persönliche Angebote von Eigentümern und Maklern</p>
+                                        </li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Suche aufgeben</a></li>
+                                    </ul>
+
+                                </div>
+
+                            </div>
+
+                            <!--show7DivMask-->
+                            <div id="show7DivMaske" style=" position:absolute; transform:skew(-1deg);  width:132px; height:70px; z-index:999999999; top:3px; left:1px;">
+
+                            </div>
+
+                            <div ng-controller="alertCtrl">
+                                <a href="#"><span style="margin-left:40px;">Umzug</span></a>
+                            </div>
+                        </li>
+                    </ul>
+
+
+
+
+
+
+                    <!--dialog buttons div-->
+                    <div id="dialog-div" ng-controller="alertCtrl" style="position:absolute; z-index:-1; width:650px;height:230px; background-color:rgba(255,255,255,0.9); top:150px; left:20px; box-shadow:2px 2px 2px gray">
+
+                        <!--dialog-div-wrapper-->
+                        <div style="margin-top:20px; margin-left:40px;">
+
+                            <!--dialog-div-section1"-->
+                            <section id="dialog-div-section1" style="margin:0 10px;">
+                                <h1 style=" color:#787878 ; font-family:Calibri">Immobilien, wohnungen, Häuser </h1>
+                            </section>
+
+                            <!--dialog-div-section2"-->
+                            <section id="dialog-div-section2" style="margin:0 10px;">
+                                <article style="float:left;">
+                                    <h5>Wohnung oder Haus</h5>
+                                </article>
+
+
+                                <article style="float:left; margin-left:155px; color:#712323">
+                                    <h5>Tragen Sie ein: Darmstadt oder Frankfurt</h5>
+                                </article>
+
+                            </section>
+
+         <!--FORM-------------------------->
+                            @using (Html.BeginForm("Index", "Home", FormMethod.Post, new {@class="form1", id = "form1" }))
+                            {
+
+
+                            <!--dialog - div - section3"-->
+                                <section id="dialog-div-section3">
+                                    <article style="float:left; margin-left:10px">
+
+                                        <!--Wohnung mieten-->
+                                        <input type="text" readonly="readonly" value="Wohnung mieten" id="dialogDivSection3Btn1-p1" name="Wohnungmieten" ng-controller="alertCtrl" ng-click="dialogDivSection3Btn1Function()" ng-style="{'cursor':'pointer'}" class="form-control" style=" left:250px; width:270px; height:40px; display:block; border:1px solid #d1d1d1; background-color:white; padding:8px 12px" />
+                                        <i id="i-wohnung" class="fa fa-angle-down" style="position:absolute; cursor:pointer; top:120px; right:345px;"></i>
+
+                                        <!--Haus mieten-->
+                                        <input type="text" readonly="readonly" value="Haus mieten" id="dialogDivSection3Btn1-p2" ng-controller="alertCtrl" ng-click="dialogDivSection3Btn1Function()" ng-style="{'cursor':'pointer'}" class="form-control" style="left:250px;  display:none; width:270px; height:40px; border:1px solid #d1d1d1; background-color:white; padding:8px 12px" />
+
+                                        <!--Wohnen auf Zeit mieten-->
+                                        <input type="text" readonly="readonly" value="Wohnen auf Zeit mieten" id="dialogDivSection3Btn1-p3" ng-controller="alertCtrl" ng-click="dialogDivSection3Btn1Function()" ng-style="{'cursor':'pointer'}" class="form-control" style="left:250px;display:none;  width:270px; height:40px; border:1px solid #d1d1d1; background-color:white; padding:8px 12px" />
+
+                                        <!--Garage/stellplatz mieten-->
+                                        <input type="text" readonly="readonly" value="Garage/stellplatz mieten" id="dialogDivSection3Btn1-p4" ng-controller="alertCtrl" ng-click="dialogDivSection3Btn1Function()" ng-style="{'cursor':'pointer'}" class="form-control" style="left:250px; display:none;   width:270px; height:40px; border:1px solid #d1d1d1; background-color:white; padding:8px 12px" />
+
+                                        <!--Grundstück mieten-->
+                                        <input type="text" readonly="readonly" value="Grundstück mieten" id="dialogDivSection3Btn1-p5" ng-controller="alertCtrl" ng-click="dialogDivSection3Btn1Function()" ng-style="{'cursor':'pointer'}" class="form-control" style="left:250px; display:none;  width:270px; height:40px; border:1px solid #d1d1d1; background-color:white; padding:8px 12px" />
+
+                                        <!--Neubauprojekt mieten-->
+                                        <input type="text" readonly="readonly" value="Neubauprojekt mieten" id="dialogDivSection3Btn1-p6" n ng-controller="alertCtrl" ng-click="dialogDivSection3Btn1Function()" ng-style="{'cursor':'pointer'}" class="form-control" style="left:250px; display:none;  width:270px; height:40px; border:1px solid #d1d1d1; background-color:white; padding:8px 12px" />
+
+                                        <!--Sonstiges-->
+                                        <input type="text" readonly="readonly" value="Sonstiges" id="dialogDivSection3Btn1-p7" ng-controller="alertCtrl" ng-click="dialogDivSection3Btn1Function()" ng-style="{'cursor':'pointer'}" class="form-control" style="left:250px;   width:270px; display:none; height:40px; border:1px solid #d1d1d1; background-color:white; padding:8px 12px" />
+
+
+                                        <!----------->
+                                        <!--Wohnung kaufen-->
+                                        <input type="text" readonly="readonly" value="Wohnung kaufen" id="dialogDivSection3Btn1-p8" name="Wohnungmieten" ng-controller="alertCtrl" ng-click="dialogDivSection3Btn1Function()" ng-style="{'cursor':'pointer'}" class="form-control" style=" left:250px; display:none;  width:270px; height:40px; border:1px solid #d1d1d1; background-color:white; padding:8px 12px" />
+
+                                        <!--Haus kaufen-->
+                                        <input type="text" readonly="readonly" value="Haus kaufen" id="dialogDivSection3Btn1-p9" ng-controller="alertCtrl" ng-click="dialogDivSection3Btn1Function()" ng-style="{'cursor':'pointer'}" class="form-control" style="left:250px; display:none;  width:270px; height:40px; border:1px solid #d1d1d1; background-color:white; padding:8px 12px" />
+
+                                        <!--Wohnen auf Zeit kaufen-->
+                                        <input type="text" readonly="readonly" value="Wohnen auf Zeit kaufen" id="dialogDivSection3Btn1-p10" ng-controller="alertCtrl" ng-click="dialogDivSection3Btn1Function()" ng-style="{'cursor':'pointer'}" class="form-control" style="left:250px; display:none;   width:270px; height:40px; border:1px solid #d1d1d1; background-color:white; padding:8px 12px" />
+
+                                        <!--readonly button Wohnflaeche-->
+                                        <input type="text" readonly="readonly" value="Garage/stellplatz kaufen" id="dialogDivSection3Btn1-p11" ng-controller="alertCtrl" ng-click="dialogDivSection3Btn1Function()" ng-style="{'cursor':'pointer'}" class="form-control" style="left:250px; display:none; width:270px; height:40px; border:1px solid #d1d1d1; background-color:white; padding:8px 12px" />
+
+                                        <!--readonly button Zimmer-->
+                                        <input type="text" readonly="readonly" value="Grundstück kaufen" id="dialogDivSection3Btn1-p12" ng-controller="alertCtrl" ng-click="dialogDivSection3Btn1Function()" ng-style="{'cursor':'pointer'}" class="form-control" style="left:250px;display:none;  width:270px; height:40px; border:1px solid #d1d1d1; background-color:white; padding:8px 12px" />
+
+                                        <!--readonly button Zimmer-->
+                                        <input type="text" readonly="readonly" value="Neubauprojekt kaufen" id="dialogDivSection3Btn1-p13" n ng-controller="alertCtrl" ng-click="dialogDivSection3Btn1Function()" ng-style="{'cursor':'pointer'}" class="form-control" style="left:250px; display:none;  width:270px; height:40px; border:1px solid #d1d1d1; background-color:white; padding:8px 12px" />
+
+                                        <!--readonly button Zimmer-->
+                                        <input type="text" readonly="readonly" value="Sonstiges" id="dialogDivSection3Btn1-p14" ng-controller="alertCtrl" ng-click="dialogDivSection3Btn1Function()" ng-style="{'cursor':'pointer'}" class="form-control" style="left:250px;  width:270px; display:none; height:40px; border:1px solid #d1d1d1; background-color:white; padding:8px 12px" />
+
+
+                                    </article>
+
+
+                                    <!--Input Box-->
+                                    <article style="float:left; margin-left:15px ">
+                                        <input id="Ort" name="Ort" type="text" class="form-control" placeholder="Darmstadt oder Frankfurt eingeben" style="width:250px; height:40px;" />
+                                        @*@Html.TextBoxFor(Model.Single(m => m.Ort) , new { @class= "form-control", id="Ort", style= "width:250px; height:40px;", placeholder = "Darmstadt oder Frankfurt eingeben" })*@
+                                    </article>
+                                </section>
+
+
+                            <!--dialog-div-section4-->
+                                <div id="dialog-div-section4" style="clear:both; height:50px; width:565px;padding-top:10px; margin:20px 10px;">
+
+
+
+
+                                    <!--mietpreis-->
+                                    <article style="float:left;">
+                                        <div style="position:relative;">
+                                            <input type="text" readonly="readonly" name="Mietpreis" value="   Mietpreis" id="mietpreis" ng-controller="alertCtrl" ng-click="dialogDivSection3Btn1Function()" ng-style="{'cursor':'pointer'}" style="width:110px; height:40px; border-radius:5px; display:block; border:none; color:#000;  background-color:rgba(255,255,255,0);" />
+                                            <i id="i-mietpreis" style=" position:absolute; left:85px; cursor:pointer; top:13px;" class="fa fa-angle-down"></i>
+                                        </div>
+
+                                    </article>
+
+
+
+
+                                    <!--wohnfläche-->
+                                    <article style="float:left">
+
+                                        <div style="position:relative;">
+                                            <input type="text" readonly="readonly" name="Wohnflaeche" value="   Wohnflaeche" id="wohnflaeche" ng-controller="alertCtrl" ng-click="dialogDivSection3Btn1Function()" ng-style="{'cursor':'pointer'}" style="width:125px; height:40px; border-radius:5px; display:block; border:none;  color:#000;  background-color:rgba(255,255,255,0);" />
+                                            <i id="i-wohnflaeche" style=" position:absolute; left:102px; cursor:pointer; top:13px;" class="fa fa-angle-down"></i>
+                                        </div>
+
+
+                                    </article>
+
+
+
+                                    <!--zimmer-->
+                                    <article style="float:left">
+
+                                        <div style="position:relative;">
+                                            <input type="text" readonly="readonly" name="Zimmer" value="     Zimmer" id="zimmer" ng-controller="alertCtrl" ng-click="dialogDivSection3Btn1Function()" ng-style="{'cursor':'pointer'}" style="width:125px; height:40px; border-radius:5px; display:block; border:none;  color:#000;  background-color:rgba(255,255,255,0);" />
+                                            <i id="i-zimmer" style=" position:absolute; left:95px; cursor:pointer; top:13px;" class="fa fa-angle-down"></i>
+                                        </div>
+
+
+
+                                    </article>
+
+                                    <!--such button------------------------->
+                                    <article style="float:left; margin-left:85px;">
+                                        <input id="suchButton" type="submit" value="@ViewBag.Count" class="btn btn-warning" style="width:120px; height:40px; color:#000; font-size:1.2em; margin-left:-30px; font-weight:bold;" />
+                                    </article>
+
+                                </div>
+
+                                <!--end of form-->
+
+                            </div>
+                            }
+
+
+                            <!-------dialog-div-section3-btn1-show------>
+                            <div id="dialogDivSection3Btn1Show" style="position:relative; z-index:999; background-color:#fcfcfc; display:none; width:700px; height:300px; left:50px; top:-68px;">
+
+                                <article id="article1" style="float:left">
+
+                                    <ul class="ul-radio">
+                                        <li><h4>Mieten</h4></li>
+
+                                        <li><input id="radio1" type="radio" ng-model="content" value="first" style="padding-top:30px;" /><span> Wohnung</span></li>
+                                        <li><input id="radio2" type="radio" ng-model="content" value="second" ng-click="someFunction(content)" /><span> Haus</span></li>
+                                        <li><input id="radio3" type="radio" ng-model="content" value="third" ng-click="someFunction(content)" /><span> Wohnen auf Zeit</span></li>
+                                        <li><input id="radio4" type="radio" ng-model="content" value="fifth" ng-click="someFunction(content)" /><span> Garage/stellplatz</span></li>
+                                        <li><input id="radio5" type="radio" ng-model="content" value="seventh" ng-click="someFunction(content)" /><span> Grundstück</span></li>
+                                        <li><input id="radio6" type="radio" ng-model="content" value="eight" ng-click="someFunction(content)" /><span> Neubauprojekt</span></li>
+                                        <li><input id="radio7" type="radio" ng-model="content" value="nineth" ng-click="someFunction(content)" /><span> Sonstiges</span></li>
+
+                                    </ul>
+
+                                </article>
+
+                                <article id="article2" style="float:left">
+
+                                    <ul class="ul-radio">
+                                        <li><h4>Kaufen</h4></li>
+                                        <li><input id="radio8" type="radio" ng-model="content2" value="first" style="padding-top:30px;" /><span> Wohnung</span></li>
+                                        <li><input id="radio9" type="radio" ng-model="content2" value="second" /><span> Haus</span></li>
+                                        <li><input id="radio10" type="radio" ng-model="content2" value="third" /><span> Wohnen auf Zeit</span></li>
+                                        <li><input id="radio11" type="radio" ng-model="content2" value="fifth" /><span> Garage/stellplatz</span></li>
+                                        <li><input id="radio12" type="radio" ng-model="content2" value="seventh" /><span> Grundstück</span></li>
+                                        <li><input id="radio13" type="radio" ng-model="content2" value="eighth" /><span> Neubauprojekt</span></li>
+                                        <li><input id="radio14" type="radio" ng-model="content2" value="nineth" /><span> Sonstiges</span></li>
+
+                                    </ul>
+
+                                </article>
+
+                                <article id="article3" style="float:left">
+
+                                    <ul class="ul-radio">
+                                        <li> <h4>Anzeige</h4> </li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Hausbau & Kataloge</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Fertighäuser</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Massivhäuser</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Musterhäuser</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Musterhausparks</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Baufinanzierung</a></li>
+                                    </ul>
+
+                                </article>
+
+                                <article id="article4" style="float:left">
+
+                                    <ul class="ul-radio">
+                                        <li> <h4>Weiteres</h4> </li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Renditeobjekte</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Neubauprojekte</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Gewerbeimmobilien</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Auslandsimmobilien</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Zwangsversteigerung</a></li>
+                                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Geldanlage</a></li>
+                                    </ul>
+
+                                </article>
+
+
+                                <style type="text/css">
+                                    .ul-radio {
+                                    }
+
+                                        .ul-radio > li {
+                                            list-style: none;
+                                            line-height: 30px;
+                                        }
+
+                                            .ul-radio > li > a {
+                                                color: black;
+                                                text-decoration: none;
+                                            }
+
+                                                .ul-radio > li > a:hover {
+                                                    color: red;
+                                                }
+                                </style>
+
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <!--mietpreisShowDiv-->
+                            <div id="mietpreisDiv" style="position:absolute; display:none;  left:50px; top:203px;  width:250px; height:300px; background-color:#fcfcfc; box-shadow:0px 4px 5px gray">
+
+                                <ul class="mietpreis-ul">
+                                    <li><input id="radioMietpreis1" type="radio" ng-model="content3" value="first" checked="checked" /> <span id="mietpreis-beliebiger" style="margin-left:10px;"> beliebig</span></li>
+                                    <li><input id="radioMietpreis2" type="radio" ng-model="content3" value="second" /> <span id="bis300" style="margin-left:10px;"> bis 300 €</span></li>
+                                    <li><input id="radioMietpreis3" type="radio" ng-model="content3" value="third" /> <span style="margin-left:10px;"> bis 400 €</span></li>
+                                    <li><input id="radioMietpreis4" type="radio" ng-model="content3" value="fourth" /> <span style="margin-left:10px;"> bis 500 €</span></li>
+                                    <li><input id="radioMietpreis5" type="radio" ng-model="content3" value="fifth" /> <span style="margin-left:10px;"> bis 600 €</span></li>
+                                    <li><input id="radioMietpreis6" type="radio" ng-model="content3" value="sixt" /> <span style="margin-left:10px;"> bis 700 €</span></li>
+                                    <li><input id="radioMietpreis7" type="radio" ng-model="content3" value="seventh" /> <span style="margin-left:10px;"> bis 800 €</span></li>
+                                </ul>
+
+
+                                <style type="text/css">
+                                    .mietpreis-ul {
+                                        padding-top: 0px;
+                                        margin-top:20px;
+                                    }
+
+                                        .mietpreis-ul > li {
+                                            list-style: none;
+                                            width: 150px;
+                                            height: 40px;
+                                           
+                                        }
+
+                                            .mietpreis-ul > li > a {
+                                                font-size: 1.4em;
+                                            }
+
+                                                .mietpreis-ul > li > a:hover {
+                                                
+                                                    /*background-color:yellow;*/
+                                                }
+                                </style>
+                            </div>
+
+
+
+
+
+
+                            <!--wohnflaecheShowDiv-->
+                            <div id="wohnflaecheShowDiv" style="position:absolute; z-index:9999999; display:none; left:162px; top:203px; width:250px; height:300px; background-color:#fcfcfc; box-shadow:0px 4px 5px gray">
+
+                                <ul class="mietpreis-ul">
+                                    <li><input id="radioWohnflaeche1" type="radio" ng-model="content3" value="first" checked="checked" /> <span id="mietpreis-beliebiger" style="margin-left:10px;"> beliebig</span></li>
+                                    <li><input id="radioWohnflaeche2" type="radio" ng-model="content3" value="second" /> <span style="margin-left:10px;"> ab 40 qm²</span></li>
+                                    <li><input id="radioWohnflaeche3" type="radio" ng-model="content3" value="third" /> <span style="margin-left:10px;"> ab 60 qm²</span></li>
+                                    <li><input id="radioWohnflaeche4" type="radio" ng-model="content3" value="fourth" /> <span style="margin-left:10px;"> ab 80 qm²</span></li>
+                                    <li><input id="radioWohnflaeche5" type="radio" ng-model="content3" value="fifth" /> <span style="margin-left:10px;"> ab 100 qm²</span></li>
+                                    <li><input id="radioWohnflaeche6" type="radio" ng-model="content3" value="sixt" /> <span style="margin-left:10px;"> ab 120 qm²</span></li>
+                                    <li><input id="radioWohnflaeche7" type="radio" ng-model="content3" value="seventh" /> <span style="margin-left:10px;"> ab 140 qm²</span></li>
+                                </ul>
+
+
+                                <style type="text/css">
+                                    /*.mietpreis-ul {
+                                        padding-top: 30px;
+                                    }
+
+                                        .mietpreis-ul > li {
+                                            list-style: none;
+                                            width: 250px;
+                                            height: 40px;
+                                        }
+
+                                            .mietpreis-ul > li > a {f
+                                                font-size: 1.4em;
+                                            }*/
+                                </style>
+                            </div>
+
+
+
+
+                            <!--zimmerShowDiv-->
+                            <div id="zimmerShowDiv" style="position:absolute; z-index:9999999; display:none;  left:285px; top:203px; width:220px; height:320px; background-color:#fcfcfc; box-shadow:0px 4px 5px gray">
+
+                                <ul class="zimmerShowDiv-ul">
+                                    <li><input id="radiozimmer1" type="radio" ng-model="content3" value="first" checked="checked" /> <span id="mietpreis-beliebiger" style="margin-left:10px;"> beliebig</span></li>
+                                    <li><input id="radiozimmer2" type="radio" ng-model="content3" value="second" /> <span style="margin-left:10px;"> ab 3 Zimmer</span></li>
+                                    <li><input id="radiozimmer3" type="radio" ng-model="content3" value="third" /> <span style="margin-left:10px;"> ab 4 Zimmer</span></li>
+                                    <li><input id="radiozimmer4" type="radio" ng-model="content3" value="fourth" /> <span style="margin-left:10px;"> ab 5 Zimmer</span></li>
+                                    <li><input id="radiozimmer5" type="radio" ng-model="content3" value="fifth" /> <span style="margin-left:10px;"> ab 6 Zimmer</span></li>
+                                    <li><input id="radiozimmer6" type="radio" ng-model="content3" value="sixt" /> <span style="margin-left:10px;"> ab 7 Zimmer</span></li>
+                                    <li><input id="radiozimmer7" type="radio" ng-model="content3" value="seventh" /> <span style="margin-left:10px;"> ab 8 Zimmer</span></li>
+                                </ul>
+
+
+                                <style type="text/css">
+                                    .zimmerShowDiv-ul {
+                                        padding-top: 20px;
+                                        margin-left: -20px;
+                                    }
+
+                                        .zimmerShowDiv-ul > li {
+                                            list-style: none;
+                                            width: 220px;
+                                            height: 40px;
+                                        }
+
+                                            .zimmerShowDiv-ul > li > a {
+                                                font-size: 1.4em;
+                                            }
+                                </style>
+                            </div>
+
+
+
+
+
+
+
+                        </div> <!--end of dialo-div-->
+
+                    </div> <!--end of header menu-->
+                </div>
+            </nav>
+
+
+            <!-------------------------------------------->
+            <!--tablet menu-->
+            <nav id="menu-nav-tablet">
+
+
+                <!--Hamburger menu-->
+                <div id="hamburgr-menu" style="position:absolute; width:100px; height:30px; top:10px; left:10px" ng-init="falg1=false" ng-mouseover="flag1=true" ng-model="flag1"
+                     ng-mouseleave="flag1=false">
+
+
+                    <a href="#" style="position:absolute; left:0px; text-decoration:none">
+                        <img ng-show="flag1" src="~/Images/hamburger-red.png" width="30" height="30" /> <span ng-show="flag1" style="font-size:1.1em; color:red; "> Menu</span>
+                        <img ng-hide="flag1" src="/Images/hamburgr-black.png" width="30" height="30" /> <span ng-hide="flag1" style="font-size:1.1em; color:black; "> Menu</span>
+                    </a>
+                </div>
+
+
+                <div id="menu-tablet-relative" style="width:100%; height:600px;   margin:0 auto;">
+                    <!--timmo icon-->
+                    <div id="timmo-icon" style="position:relative; z-index:999999999999; width:250px; height:40px; margin:0px auto;">
+
+                        <img id="timmo-img" src="~/Images/timmo.png" width="250" height="40" style="margin-top:5px;" />
+
+                    </div>       
+                </div>
+
+
+                <div id="menu-text" style="position:absolute; z-index:999999; right:20px; top:20px;"
+                     ng-model="xright"
+                     ng-mouseover="xright=true"
+                     ng-mouseleave="xright=false">
+
+                    <a href="javascript: alert('meine Timmowelt')" ng-style="xright===true ? {'color':'red', 'transition':'all 0.5s ease',  'text-decoration':'none'} : {'color':'black', 'text-decoration':'none'} ">
+                        <span id="meine-timmowelt">Meine Timmowelt </span> <span id="meine-timmowelt-span" class="glyphicon glyphicon-user" style="margin-top:-10px; margin-left:10px;transform:scale(1.4)"></span>
+                    </a>
+                </div>
+
+            </nav>
+
+
+
+
+
+    <div id="dialog-div-tablet" ng-controller="alertCtrl" style="position:absolute; display:none; z-index:9999999;  width:650px;height:230px; background-color:rgba(255,255,255,0.9); top:150px; left:20px; box-shadow:2px 2px 2px gray">
+
+        <!--dialog-div-tablet-wrapper-->
+        <div style="margin-top:20px; margin-left:40px;">
+
+            <!--dialog-div-section1"-->
+            <section id="dialog-div-tablet-section1" style="margin:0 10px;">
+                <h1 style=" color:#787878 ; font-family:Calibri">Immobilien, wohnungen, Häuser </h1>
+            </section>
+
+            <!--dialog-div-section2"-->
+            <section id="dialog-div-tablet-section2" style="margin:0 10px;">
+                <article style="float:left;">
+                    <h5>Wohnung oder Haus</h5>
+                </article>
+
+
+                <article style="float:left; margin-left:155px; color:#712323">
+                    <h5>Tragen Sie ein: Darmstadt oder Frankfurt</h5>
+                </article>
+
+            </section>
+
+            <!--FORM-------------------------->
+            @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @class = "form1", id = "form1" }))
+            {
+
+
+                            <!--dialog-div-tablet-section3"-->
+                <section id="dialog-div-tablet-section3">
+                    <article style="float:left; margin-left:10px">
+
+                        <!--Wohnung mieten-->
+                        <input type="text" readonly="readonly" value="Wohnung mieten" id="dialogDivSection3Btn1-p1-tablet" name="Wohnungmieten" ng-controller="alertCtrl" ng-click="dialogDivSection3Btn1Function()" ng-style="{'cursor':'pointer'}" class="form-control" style=" left:250px; width:270px; height:40px; display:block; border:1px solid #d1d1d1; background-color:white; padding:8px 12px" />
+                        <i id="i-wohnung-tablet" class="fa fa-angle-down" style="position:absolute; cursor:pointer; top:120px; right:345px;"></i>
+
+                        <!--Haus mieten-->
+                        <input type="text" readonly="readonly" value="Haus mieten" id="dialogDivSection3Btn1-p2-tablet" ng-controller="alertCtrl" ng-click="dialogDivSection3Btn1Function()" ng-style="{'cursor':'pointer'}" class="form-control" style="left:250px;  display:none; width:270px; height:40px; border:1px solid #d1d1d1; background-color:white; padding:8px 12px" />
+
+                        <!--Wohnen auf Zeit mieten-->
+                        <input type="text" readonly="readonly" value="Wohnen auf Zeit mieten" id="dialogDivSection3Btn1-p3-tablet" ng-controller="alertCtrl" ng-click="dialogDivSection3Btn1Function()" ng-style="{'cursor':'pointer'}" class="form-control" style="left:250px;display:none;  width:270px; height:40px; border:1px solid #d1d1d1; background-color:white; padding:8px 12px" />
+
+                        <!--Garage/stellplatz mieten-->
+                        <input type="text" readonly="readonly" value="Garage/stellplatz mieten" id="dialogDivSection3Btn1-p4-tablet" ng-controller="alertCtrl" ng-click="dialogDivSection3Btn1Function()" ng-style="{'cursor':'pointer'}" class="form-control" style="left:250px; display:none;   width:270px; height:40px; border:1px solid #d1d1d1; background-color:white; padding:8px 12px" />
+
+                        <!--Grundstück mieten-->
+                        <input type="text" readonly="readonly" value="Grundstück mieten" id="dialogDivSection3Btn1-p5-tablet" ng-controller="alertCtrl" ng-click="dialogDivSection3Btn1Function()" ng-style="{'cursor':'pointer'}" class="form-control" style="left:250px; display:none;  width:270px; height:40px; border:1px solid #d1d1d1; background-color:white; padding:8px 12px" />
+
+                        <!--Neubauprojekt mieten-->
+                        <input type="text" readonly="readonly" value="Neubauprojekt mieten" id="dialogDivSection3Btn1-p6-tablet" n ng-controller="alertCtrl" ng-click="dialogDivSection3Btn1Function()" ng-style="{'cursor':'pointer'}" class="form-control" style="left:250px; display:none;  width:270px; height:40px; border:1px solid #d1d1d1; background-color:white; padding:8px 12px" />
+
+                        <!--Sonstiges-->
+                        <input type="text" readonly="readonly" value="Sonstiges" id="dialogDivSection3Btn1-p7-tablet" ng-controller="alertCtrl" ng-click="dialogDivSection3Btn1Function()" ng-style="{'cursor':'pointer'}" class="form-control" style="left:250px;   width:270px; display:none; height:40px; border:1px solid #d1d1d1; background-color:white; padding:8px 12px" />
+
+
+                        <!----------->
+                        <!--Wohnung kaufen-->
+                        <input type="text" readonly="readonly" value="Wohnung kaufen" id="dialogDivSection3Btn1-p8-tablet" name="Wohnungmieten" ng-controller="alertCtrl" ng-click="dialogDivSection3Btn1Function()" ng-style="{'cursor':'pointer'}" class="form-control" style=" left:250px; display:none;  width:270px; height:40px; border:1px solid #d1d1d1; background-color:white; padding:8px 12px" />
+
+                        <!--Haus kaufen-->
+                        <input type="text" readonly="readonly" value="Haus kaufen" id="dialogDivSection3Btn1-p9-tablet" ng-controller="alertCtrl" ng-click="dialogDivSection3Btn1Function()" ng-style="{'cursor':'pointer'}" class="form-control" style="left:250px; display:none;  width:270px; height:40px; border:1px solid #d1d1d1; background-color:white; padding:8px 12px" />
+
+                        <!--Wohnen auf Zeit kaufen-->
+                        <input type="text" readonly="readonly" value="Wohnen auf Zeit kaufen" id="dialogDivSection3Btn1-p10-tablet" ng-controller="alertCtrl" ng-click="dialogDivSection3Btn1Function()" ng-style="{'cursor':'pointer'}" class="form-control" style="left:250px; display:none;   width:270px; height:40px; border:1px solid #d1d1d1; background-color:white; padding:8px 12px" />
+
+                        <!--readonly button Wohnflaeche-->
+                        <input type="text" readonly="readonly" value="Garage/stellplatz kaufen" id="dialogDivSection3Btn1-p11-tablet" ng-controller="alertCtrl" ng-click="dialogDivSection3Btn1Function()" ng-style="{'cursor':'pointer'}" class="form-control" style="left:250px; display:none; width:270px; height:40px; border:1px solid #d1d1d1; background-color:white; padding:8px 12px" />
+
+                        <!--readonly button Zimmer-->
+                        <input type="text" readonly="readonly" value="Grundstück kaufen" id="dialogDivSection3Btn1-p12-tablet" ng-controller="alertCtrl" ng-click="dialogDivSection3Btn1Function()" ng-style="{'cursor':'pointer'}" class="form-control" style="left:250px;display:none;  width:270px; height:40px; border:1px solid #d1d1d1; background-color:white; padding:8px 12px" />
+
+                        <!--readonly button Zimmer-->
+                        <input type="text" readonly="readonly" value="Neubauprojekt kaufen" id="dialogDivSection3Btn1-p13-tablet" n ng-controller="alertCtrl" ng-click="dialogDivSection3Btn1Function()" ng-style="{'cursor':'pointer'}" class="form-control" style="left:250px; display:none;  width:270px; height:40px; border:1px solid #d1d1d1; background-color:white; padding:8px 12px" />
+
+                        <!--readonly button Zimmer-->
+                        <input type="text" readonly="readonly" value="Sonstiges" id="dialogDivSection3Btn1-p14-tablet" ng-controller="alertCtrl" ng-click="dialogDivSection3Btn1Function()" ng-style="{'cursor':'pointer'}" class="form-control" style="left:250px;  width:270px; display:none; height:40px; border:1px solid #d1d1d1; background-color:white; padding:8px 12px" />
+
+
+                    </article>
+
+
+                    <!--Input Box-->
+                    <article style="float:left; margin-left:15px ">
+                        <input id="Ort-tablet" name="Ort" type="text" class="form-control" placeholder="Darmstadt oder Frankfurt eingeben" style="width:250px; height:40px;" />
+                        @*@Html.TextBoxFor(Model.Single(m => m.Ort) , new { @class= "form-control", id="Ort", style= "width:250px; height:40px;", placeholder = "Darmstadt oder Frankfurt eingeben" })*@
+                    </article>
+                </section>
+
+
+                            <!--dialog-div-section4-->
+                                <div id="dialog-div-tablet-section4" style="clear:both; height:50px; width:565px;padding-top:10px; margin:20px 10px;">
+
+
+
+
+                                    <!--mietpreis-->
+                                    <article style="float:left;">
+                                        <div style="position:relative;">
+                                            <input type="text" readonly="readonly" name="Mietpreis" value="   Mietpreis" id="mietpreis-tablet" ng-controller="alertCtrl" ng-click="dialogDivSection3Btn1Function()" ng-style="{'cursor':'pointer'}" style="width:110px; height:40px; border-radius:5px; display:block; border:none; color:#000;  background-color:rgba(255,255,255,0);" />
+                                            <i id="i-mietpreis-tablet" style=" position:absolute; left:85px; cursor:pointer; top:13px;" class="fa fa-angle-down"></i>
+                                        </div>
+
+                                    </article>
+
+
+
+
+                                    <!--wohnfläche-->
+                                    <article style="float:left">
+
+                                        <div style="position:relative;">
+                                            <input type="text" readonly="readonly" name="Wohnflaeche" value="   Wohnflaeche" id="wohnflaeche-tablet" ng-controller="alertCtrl" ng-click="dialogDivSection3Btn1Function()" ng-style="{'cursor':'pointer'}" style="width:125px; height:40px; border-radius:5px; display:block; border:none;  color:#000;  background-color:rgba(255,255,255,0);" />
+                                            <i id="i-wohnflaeche-tablet" style=" position:absolute; left:102px; cursor:pointer; top:13px;" class="fa fa-angle-down"></i>
+                                        </div>
+
+
+                                    </article>
+
+
+
+                                    <!--zimmer-->
+                                    <article style="float:left">
+
+                                        <div style="position:relative;">
+                                            <input type="text" readonly="readonly" name="Zimmer" value="     Zimmer" id="zimmer-tablet" ng-controller="alertCtrl" ng-click="dialogDivSection3Btn1Function()" ng-style="{'cursor':'pointer'}" style="width:125px; height:40px; border-radius:5px; display:block; border:none;  color:#000;  background-color:rgba(255,255,255,0);" />
+                                            <i id="i-zimmer-tablet" style=" position:absolute; left:95px; cursor:pointer; top:13px;" class="fa fa-angle-down"></i>
+                                        </div>
+
+
+
+                                    </article>
+
+                                    <!--such button------------------------->
+                                    <article style="float:left; margin-left:85px;">
+                                        <input id="suchButton-tablet" type="submit" value="@ViewBag.Count" class="btn btn-warning" style="width:120px; height:40px; color:#000; font-size:1.2em; margin-left:-30px; font-weight:bold;" />
+                                    </article>
+
+                                </div>
+
+                                <!--end of form-->
+
+                            </div>
+            }
+
+
+            <!-------dialog-div-section3-btn1-tablet-show------>
+            <div id="dialogDivSection3Btn1Show-tablet" style="position:relative; z-index:999; background-color:#fcfcfc; display:none; width:700px; height:300px; left:50px; top:-68px;">
+
+                <article id="article1" style="float:left">
+
+                    <ul class="ul-radio">
+                        <li><h4>Mieten</h4></li>
+
+                        <li><input id="radio1-tablet" type="radio" ng-model="content" value="first" style="padding-top:30px;" /><span> Wohnung</span></li>
+                        <li><input id="radio2-tablet" type="radio" ng-model="content" value="second" ng-click="someFunction(content)" /><span> Haus</span></li>
+                        <li><input id="radio3-tablet" type="radio" ng-model="content" value="third" ng-click="someFunction(content)" /><span> Wohnen auf Zeit</span></li>
+                        <li><input id="radio4-tablet" type="radio" ng-model="content" value="fifth" ng-click="someFunction(content)" /><span> Garage/stellplatz</span></li>
+                        <li><input id="radio5-tablet" type="radio" ng-model="content" value="seventh" ng-click="someFunction(content)" /><span> Grundstück</span></li>
+                        <li><input id="radio6-tablet" type="radio" ng-model="content" value="eight" ng-click="someFunction(content)" /><span> Neubauprojekt</span></li>
+                        <li><input id="radio7-tablet" type="radio" ng-model="content" value="nineth" ng-click="someFunction(content)" /><span> Sonstiges</span></li>
+
+                    </ul>
+
+                </article>
+
+                <article id="article2" style="float:left">
+
+                    <ul class="ul-radio">
+                        <li><h4>Kaufen</h4></li>
+                        <li><input id="radio8-tablet" type="radio" ng-model="content2" value="first" style="padding-top:30px;" /><span> Wohnung</span></li>
+                        <li><input id="radio9-tablet" type="radio" ng-model="content2" value="second" /><span> Haus</span></li>
+                        <li><input id="radio10-tablet" type="radio" ng-model="content2" value="third" /><span> Wohnen auf Zeit</span></li>
+                        <li><input id="radio11-tablet" type="radio" ng-model="content2" value="fifth" /><span> Garage/stellplatz</span></li>
+                        <li><input id="radio12-tablet" type="radio" ng-model="content2" value="seventh" /><span> Grundstück</span></li>
+                        <li><input id="radio13-tablet" type="radio" ng-model="content2" value="eighth" /><span> Neubauprojekt</span></li>
+                        <li><input id="radio14-tablet" type="radio" ng-model="content2" value="nineth" /><span> Sonstiges</span></li>
+
+                    </ul>
+
+                </article>
+
+                <article id="article3" style="float:left">
+
+                    <ul class="ul-radio">
+                        <li> <h4>Anzeige</h4> </li>
+                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Hausbau & Kataloge</a></li>
+                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Fertighäuser</a></li>
+                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Massivhäuser</a></li>
+                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Musterhäuser</a></li>
+                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Musterhausparks</a></li>
+                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Baufinanzierung</a></li>
+                    </ul>
+
+                </article>
+
+                <article id="article4" style="float:left">
+
+                    <ul class="ul-radio">
+                        <li> <h4>Weiteres</h4> </li>
+                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Renditeobjekte</a></li>
+                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Neubauprojekte</a></li>
+                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Gewerbeimmobilien</a></li>
+                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Auslandsimmobilien</a></li>
+                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Zwangsversteigerung</a></li>
+                        <li> <i style="color:orange" class="fa fa-angle-right"></i> <a href="#">Geldanlage</a></li>
+                    </ul>
+
+                </article>
+
+
+                <style type="text/css">
+                    .ul-radio {
+                    }
+
+                        .ul-radio > li {
+                            list-style: none;
+                            line-height: 30px;
+                        }
+
+                            .ul-radio > li > a {
+                                color: black;
+                                text-decoration: none;
+                            }
+
+                                .ul-radio > li > a:hover {
+                                    color: red;
+                                }
+                </style>
+
+            </div>
+
+
+
+
+
+            <!--mietpreisShowDiv-->
+            <div id="mietpreisDiv-tablet" style="position:absolute; display:none;  left:50px; top:203px;  width:250px; height:300px; background-color:#fcfcfc; box-shadow:0px 4px 5px gray">
+
+                <ul class="mietpreis-ul">
+                    <li><input id="radioMietpreis1-tablet" type="radio" ng-model="content3" value="first" checked="checked" /> <span id="mietpreis-beliebiger" style="margin-left:10px;"> beliebig</span></li>
+                    <li><input id="radioMietpreis2-tablet" type="radio" ng-model="content3" value="second" /> <span id="bis300" style="margin-left:10px;"> bis 300 €</span></li>
+                    <li><input id="radioMietpreis3-tablet" type="radio" ng-model="content3" value="third" /> <span style="margin-left:10px;"> bis 400 €</span></li>
+                    <li><input id="radioMietpreis4-tablet" type="radio" ng-model="content3" value="fourth" /> <span style="margin-left:10px;"> bis 500 €</span></li>
+                    <li><input id="radioMietpreis5-tablet" type="radio" ng-model="content3" value="fifth" /> <span style="margin-left:10px;"> bis 600 €</span></li>
+                    <li><input id="radioMietpreis6-tablet" type="radio" ng-model="content3" value="sixt" /> <span style="margin-left:10px;"> bis 700 €</span></li>
+                    <li><input id="radioMietpreis7-tablet" type="radio" ng-model="content3" value="seventh" /> <span style="margin-left:10px;"> bis 800 €</span></li>
+                </ul>
+
+
+                <style type="text/css">
+                    .mietpreis-ul {
+                        padding-top: 0px;
+                    }
+
+                        .mietpreis-ul > li {
+                            list-style: none;
+                            width: 150px;
+                            height: 40px;
+                        }
+
+                            .mietpreis-ul > li > a {
+                                font-size: 1.4em;
+                            }
+
+                                .mietpreis-ul > li > a:hover {
+                                    /*background-color:yellow;*/
+                                }
+                </style>
+            </div>
+
+
+
+
+
+
+            <!--wohnflaecheShowDiv-tablet-->
+            <div id="wohnflaecheShowDiv-tablet" style="position:absolute; z-index:9999999; display:none; left:162px; top:203px; width:250px; height:300px; background-color:#fcfcfc; box-shadow:0px 4px 5px gray">
+
+                <ul class="mietpreis-ul">
+                    <li><input id="radioWohnflaeche1-tablet" type="radio" ng-model="content3" value="first" checked="checked" /> <span id="mietpreis-beliebiger" style="margin-left:10px;"> beliebig</span></li>
+                    <li><input id="radioWohnflaeche2-tablet" type="radio" ng-model="content3" value="second" /> <span style="margin-left:10px;"> ab 40 qm²</span></li>
+                    <li><input id="radioWohnflaeche3-tablet" type="radio" ng-model="content3" value="third" /> <span style="margin-left:10px;"> ab 60 qm²</span></li>
+                    <li><input id="radioWohnflaeche4-tablet" type="radio" ng-model="content3" value="fourth" /> <span style="margin-left:10px;"> ab 80 qm²</span></li>
+                    <li><input id="radioWohnflaeche5-tablet" type="radio" ng-model="content3" value="fifth" /> <span style="margin-left:10px;"> ab 100 qm²</span></li>
+                    <li><input id="radioWohnflaeche6-tablet" type="radio" ng-model="content3" value="sixt" /> <span style="margin-left:10px;"> ab 120 qm²</span></li>
+                    <li><input id="radioWohnflaeche7-tablet" type="radio" ng-model="content3" value="seventh" /> <span style="margin-left:10px;"> ab 140 qm²</span></li>
+                </ul>
+
+
+                <style type="text/css">
+                    /*.mietpreis-ul {
+                                        padding-top: 30px;
+                                    }
+
+                                        .mietpreis-ul > li {
+                                            list-style: none;
+                                            width: 250px;
+                                            height: 40px;
+                                        }
+
+                                            .mietpreis-ul > li > a {f
+                                                font-size: 1.4em;
+                                            }*/
+                </style>
+            </div>
+
+
+
+
+            <!--zimmerShowDiv-tablet-->
+            <div id="zimmerShowDiv-tablet" style="position:absolute; z-index:9999999; display:none;  left:285px; top:203px; width:220px; height:320px; background-color:#fcfcfc; box-shadow:0px 4px 5px gray">
+
+                <ul class="zimmerShowDiv-ul">
+                    <li><input id="radiozimmer1-tablet" type="radio" ng-model="content3" value="first" checked="checked" /> <span id="mietpreis-beliebiger" style="margin-left:10px;"> beliebig</span></li>
+                    <li><input id="radiozimmer2-tablet" type="radio" ng-model="content3" value="second" /> <span style="margin-left:10px;"> ab 3 Zimmer</span></li>
+                    <li><input id="radiozimmer3-tablet" type="radio" ng-model="content3" value="third" /> <span style="margin-left:10px;"> ab 4 Zimmer</span></li>
+                    <li><input id="radiozimmer4-tablet" type="radio" ng-model="content3" value="fourth" /> <span style="margin-left:10px;"> ab 5 Zimmer</span></li>
+                    <li><input id="radiozimmer5-tablet" type="radio" ng-model="content3" value="fifth" /> <span style="margin-left:10px;"> ab 6 Zimmer</span></li>
+                    <li><input id="radiozimmer6-tablet" type="radio" ng-model="content3" value="sixt" /> <span style="margin-left:10px;"> ab 7 Zimmer</span></li>
+                    <li><input id="radiozimmer7-tablet" type="radio" ng-model="content3" value="seventh" /> <span style="margin-left:10px;"> ab 8 Zimmer</span></li>
+                </ul>
+
+
+                <style type="text/css">
+                    .zimmerShowDiv-ul {
+                        padding-top: 20px;
+                        margin-left: -20px;
+                    }
+
+                        .zimmerShowDiv-ul > li {
+                            list-style: none;
+                            width: 220px;
+                            height: 40px;
+                        }
+
+                            .zimmerShowDiv-ul > li > a {
+                                font-size: 1.4em;
+                            }
+                </style>
+            </div>
+
+
+
+
+
+
+
+        </div> <!--end of dialo-div-->
+
+
+            <!--smart-menu-->
+            <nav id="smart-menu">
+
+                <div id="hamburgr-menu-smart" style="position:absolute; width:100px; height:30px; top:4px; left:10px">
+                    <img id="hamburgerImage" src="~/Images/hamburgr-black.png" width="30" height="30" /> <span id="span-menu" style="font-size:1.1em"> Menu</span>
+                </div>
+
+                <!--timmo icon-->
+                <div id="timmo-icon-smart" style="position:relative; width:150px; height:25px; margin:0px auto;  ">
+                    <img id="timmo-img" src="~/Images/timmo.png" width="150" height="25" style="margin-top:7px;" />
+                </div>
+
+                <div id="menu-text-smart" style="position:absolute; z-index:999999;  right:20px; top:9px;">
+                    @*<span id="meine-timmowelt">Meine Timmowelt </span>*@ <span class="glyphicon glyphicon-user" style="margin-top:-10px; margin-left:10px;transform:scale(1.4)"></span>
+                </div>
+
+            </nav>
+
+
+
+    <!--Fixed image-->
+            @*<figure id="background-image" style="overflow:hidden ">
+                <img src="~/Images/weg2.jpg " style="width:100%; height:800px; position:fixed; margin-top:-210px;" />
+            </figure>*@
+
+
+
+            <main>
+                @RenderBody()
+            </main>
+
+
+            <footer>
+                @*<h3 style="background-color:greenyellow; width:140px;">  @DateTime.Now.ToShortDateString() </h3>*@
+            </footer>
+
+
+            @Scripts.Render("~/bundles/jquery")
+            @Scripts.Render("~/bundles/bootstrap")
+            @RenderSection("scripts", required: false)
+
+</body>
+
+</html>
